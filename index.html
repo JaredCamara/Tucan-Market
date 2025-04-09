@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Virtual</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        #login-status {
+            text-align: right;
+            padding: 10px;
+            background: #f0f0f0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        #logout-btn {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        
+        #login-link {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+        }
+        
+        .submenu {
+            display: none;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        
+        nav ul li:hover .submenu {
+            display: block;
+        }
+        
+        .submenu li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .producto {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .producto img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        
+        .producto button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        .producto button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de estado de login -->
+    <div id="login-status">
+        <span id="user-greeting"></span>
+        <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
+        <a href="login.html" id="login-link">Iniciar Sesión</a>
+    </div>
+
+    <header>
+        <!-- Logo centrado -->
+        <div class="logo">
+            <img src="assets/logo.jpg" alt="Logo Tienda Virtual">
+        </div>
+        <h1>Tienda Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li>
+                    <a href="#">Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="#ropa">Ropa</a></li>
+                        <li><a href="#tecnologia">Tecnología</a></li>
+                        <li><a href="#papeleria">Papelería</a></li>
+                    </ul>
+                </li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h2>Bienvenido a nuestra tienda</h2>
+        <p>Explora nuestros productos y agrega al carrito.</p>
+
+        <!-- Ropa -->
+        <section id="ropa">
+            <h3>Ropa</h3>
+            <div class="productos">
+                <div class="producto">
+                    <img src="assets/playera.jpg" alt="Playera Tecnm">
+                    <p>Playera Tecnm Classica</p>
+                    <p>$349.99</p>
+                    <button onclick="agregarAlCarrito('Playera Tecnm Classica', 349.99, 'assets/playera.jpg')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="assets/gorra.jpg" alt="Gorra Yankees">
+                    <p>Gorra Yankees Blanca Unitalla</p>
+                    <p>$399.99</p>
+                    <button onclick="agregarAlCarrito('Gorra Yankees Blanca Unitalla', 399.99, 'assets/gorra.jpg')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="assets/calcetas.png" alt="Calcetas Tucan-Sport">
+                    <p>Calcetas Tucan-Sport</p>
+                    <p>$25.99</p>
+                    <button onclick="agregarAlCarrito('Calcetas Tucan-Sport', 25.99, 'Assets/calcetas.jpg')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="assets/tennis.jpg" alt="Tennis Nike Blazzer">
+                    <p>Tennis Nike Blazzer Mid Talla 24</p>
+                    <p>$899.99</p>
+                    <button onclick="agregarAlCarrito('Tennis Nike Blazzer Mid Talla 24', 899.99, 'assets/tennis.jpg')">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tecnología -->
+        <section id="tecnologia">
+            <h3>Tecnología</h3>
+            <div class="productos">
+                <div class="producto">
+                    <img src="Assets/audi.png" alt="Audífonos Sky">
+                    <p>Audífonos inalambricos Sky</p>
+                    <p>$499.99</p>
+                    <button onclick="agregarAlCarrito('Audífonos inalambricos Sky', 499.99, 'Assets/audi.png')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="Assets/reloj.jpg" alt="Reloj Smart Watch">
+                    <p>Reloj Smart Watch Oiris</p>
+                    <p>$899.99</p>
+                    <button onclick="agregarAlCarrito('Reloj Smart Watch Oiris', 899.99, 'Assets/reloj.jpg')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="Assets/mause.png" alt="Mouse RGB Gamer">
+                    <p>Mouse RGB Gamer Gryffin negro</p>
+                    <p>$199.00</p>
+                    <button onclick="agregarAlCarrito('Mouse RGB Gamer Gryffin negro', 199.00, 'Assets/mause.png')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="Assets/contro.jpg" alt="Control PS5">
+                    <p>Control PS5 Morado</p>
+                    <p>$800.00</p>
+                    <button onclick="agregarAlCarrito('Control PS5 Morado', 800.00, 'Assets/contro.jpg')">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Papelería -->
+        <section id="papeleria">
+            <h3>Papelería</h3>
+            <div class="productos">
+                <div class="producto">
+                    <img src="Assets/pegamentot.jpg" alt="Pegamento Pritt">
+                    <p>Pegamento Pritt Chico</p>
+                    <p>$25.99</p>
+                    <button onclick="agregarAlCarrito('Pegamento Pritt Chico', 25.99, 'Assets/pegamentot.jpg')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="Assets/tijera.png" alt="Tijera Old School">
+                    <p>Tijera Old School</p>
+                    <p>$15.00</p>
+                    <button onclick="agregarAlCarrito('Tijera Old School', 15.00, 'Assets/tijera.png')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="Assets/libreta.jpg" alt="Libreta Professional">
+                    <p>Libreta Professional 100 hojas Cuadros Grandes</p>
+                    <p>$12.00</p>
+                    <button onclick="agregarAlCarrito('Libreta Professional 100 hojas Cuadros Grandes', 12.00, 'Assets/libreta.jpg')">Agregar al carrito</button>
+                </div>
+                <div class="producto">
+                    <img src="Assets/lapiceros.jpg" alt="Lapiceros Scribe">
+                    <p>Paquete lapiceros 4 piezas C/ Lápiz Scribe</p>
+                    <p>$19.99</p>
+                    <button onclick="agregarAlCarrito('Paquete lapiceros 4 piezas C/ Lápiz Scribe', 19.99, 'Assets/lapiceros.jpg')">Agregar al carrito</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        // Función para agregar al carrito (simulada)
+        function agregarAlCarrito(nombre, precio, imagen) {
+            alert(`Producto agregado al carrito: ${nombre}\nPrecio: $${precio}`);
+            // Aquí deberías implementar la lógica real del carrito
+        }
+
+        // Sistema de autenticación
+        document.addEventListener('DOMContentLoaded', function() {
+            const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+            const loginLink = document.getElementById('login-link');
+            const logoutBtn = document.getElementById('logout-btn');
+            const userGreeting = document.getElementById('user-greeting');
+
+            if(usuarioLogueado) {
+                // Usuario logueado
+                userGreeting.textContent = `Bienvenido, ${usuarioLogueado.nombre || usuarioLogueado.usuario}`;
+                logoutBtn.style.display = 'inline-block';
+                loginLink.style.display = 'none';
+            } else {
+                // Usuario no logueado
+                userGreeting.textContent = '';
+                logoutBtn.style.display = 'none';
+                loginLink.style.display = 'inline-block';
+            }
+
+            // Manejar logout
+            logoutBtn.addEventListener('click', function() {
+                localStorage.removeItem('usuarioLogueado');
+                window.location.reload();
+            });
+        });
+    </script>
+</body>
+</html>

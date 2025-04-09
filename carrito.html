@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito - Tienda Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Assets/Logo.jpg" alt="Logo Tienda Virtual">
+        </div>
+        <h1>Carrito de Compras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Productos en tu carrito</h2>
+
+        <section id="productosCarrito">
+            <!-- Aquí se agregarán los productos dinámicamente con JavaScript -->
+        </section>
+
+        <div id="total">
+            <h3>Total: $<span id="totalPrecio">0.00</span></h3>
+        </div>
+
+        <button onclick="location.href='checkout.html'">Ir al Checkout</button>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
