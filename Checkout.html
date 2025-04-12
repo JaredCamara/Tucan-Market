@@ -3,23 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Tienda Virtual</title>
+    <title>Checkout - Tucan Market</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="assets/logo.jpg" alt="Logo Tienda Virtual">
+        <!-- Texto del título -->
+        <div class="logo2">
+          <img src="assets\logoTucan.PNG" alt="Logo">
+          <h1>Tucan Market</h1>
+      </div>
+    
+        <!-- Barra de estado de login -->
+        <div id="login-status">
+            <span id="user-greeting"></span>
+            <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
         </div>
-        <h1>Checkout</h1>
+    
+        <div class="logo">
+            <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo">
+        </div>
+    
+        <!-- MENÚ HORIZONTAL -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="#">🔥 Tendencias</a></li>
+                <li class="dropdown">
+                    <a href="categorias.html">💸 Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="ropa.html">Ropa</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="papeleria.html">Papelería</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">📌 Quiénes somos</a></li>
+                    <div class="cart-icon">
+                        <a href="carrito.html" id="cart-link" style="background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; text-decoration: none;">
+                            Ver Carrito
+                        </a>
+                        <a href="Checkout.html" style="background-color: green; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                            Ir a Checkout
+                        </a>
+                    </div>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <h2>Resumen de tu Pedido</h2>
+        <div id="resumen-pedido">
+            <h2>Resumen de tu Pedido</h2>
 
-        <section id="carritoCheckout">
-            <!-- Aquí se agregarán los productos dinámicamente con JavaScript -->
-        </section>
+            <section id="carritoCheckout">
+                <!-- Aquí se agregarán los productos dinámicamente con JavaScript -->
+            </section>
 
-        <div class="total">
-            <h3>Total a Pagar: $<span id="totalPago">0
+            <div class="total">
+                <h3>Total a Pagar: $<span id="totalPago">0.00</span></h3>
+            </div>
+        </div>
+
+        <form id="formulario-pago">
+            <h2>Información de Pago</h2>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="direccion">Dirección de envío:</label>
+                <textarea id="direccion" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="tarjeta">Número de tarjeta:</label>
+                <input type="text" id="tarjeta" required>
+            </div>
+            
+            <button type="submit">Confirmar Pago</button>
+        </form>
+
+        <div id="confirmacion-pago" style="display: none;">
+            <h2>¡Pago realizado con éxito!</h2>
+            <p>Tu pedido ha sido procesado correctamente. Recibirás un correo de confirmación con los detalles de tu compra.</p>
+            <p>Gracias por tu compra.</p>
+            <a href="index.html">Volver a la tienda</a>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

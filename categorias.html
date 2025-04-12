@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Texto del título -->
+        <div class="logo2">
+            <img src="assets\logoTucan.PNG" alt="Logo">
+            <h1>Tucan Market</h1>
+        </div>
+        <!-- Barra de estado de login -->
+        <div id="login-status">
+            <span id="user-greeting"></span>
+            <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
+        </div>
+
+        <div class="logo">
+            <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo">
+        </div>
+
+        <!-- MENÚ HORIZONTAL -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="#">🔥 Tendencias</a></li>
+                <li class="dropdown">
+                    <a href="categorias.html">💸 Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="ropa.html">Ropa</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="#papeleria">Papelería</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">📌 Quiénes somos</a></li>
+                <div class="cart-icon">
+                    <a href="carrito.html" id="cart-link" style="background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; text-decoration: none;">
+                        Ver Carrito
+                    </a>
+                    <a href="Checkout.html" style="background-color: green; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                        Ir a Checkout
+                    </a>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Categorias</h2>
+        <div class="categorias-botones">
+            <button onclick="window.location.href='ropa.html'">Ropa</button>
+            <button onclick="window.location.href='tecnologia.html'">Tecnología</button>
+            <button onclick="window.location.href='#papeleria'">Papelería</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

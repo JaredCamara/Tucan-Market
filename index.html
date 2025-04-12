@@ -3,179 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Virtual</title>
-    <style>
-        /* Estilos generales */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
-        
-        #login-status {
-            text-align: right;
-            padding: 10px;
-            background: #f0f0f0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        #logout-btn {
-            background-color: #f44336;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        
-        #login-link {
-            color: #4CAF50;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        
-        .logo img {
-            max-width: 150px;
-            height: auto;
-        }
-        
-        nav {
-            background-color: #333;
-            padding: 10px 0;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        
-        nav ul li {
-            position: relative;
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-        }
-        
-        .submenu {
-            display: none;
-            position: absolute;
-            background-color: #333;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        
-        nav ul li:hover .submenu {
-            display: block;
-        }
-        
-        .submenu li {
-            margin: 0;
-            padding: 0;
-        }
-        
-        main {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .productos {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-        
-        .producto {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 15px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .producto:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .producto img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-        
-        .producto button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 3px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        
-        .producto button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Tucan Market</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Barra de estado de login -->
-    <div id="login-status">
-        <span id="user-greeting"></span>
-        <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
-        <a href="login.html" id="login-link">Iniciar Sesión</a>
-    </div>
-
     <header>
-        <!-- Logo centrado -->
-        <div class="logo">
-            <img src="assets/logo.jpg" alt="Logo Tienda Virtual">
+        <!-- Texto del título -->
+        <div class="logo2">
+            <img src="assets\logoTucan.PNG" alt="Logo">
+            <h1>Tucan Market</h1>
         </div>
-        <h1>Tienda Virtual</h1>
+        <!-- Barra de estado de login -->
+        <div id="login-status">
+            <span id="user-greeting"></span>
+            <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
+            <a href="login.html" id="login-link">Iniciar Sesión</a>
+        </div>
+
+        <div class="logo">
+            <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo">
+        </div>
+
+        <!-- MENÚ HORIZONTAL -->
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li>
-                    <a href="#">Categorías</a>
+            <ul class="menu">
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="#">🔥 Tendencias</a></li>
+                <li class="dropdown">
+                    <a href="categorias.html">💸 Categorías</a>
                     <ul class="submenu">
-                        <li><a href="#ropa">Ropa</a></li>
-                        <li><a href="#tecnologia">Tecnología</a></li>
-                        <li><a href="#papeleria">Papelería</a></li>
+                        <li><a href="ropa.html">Ropa</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="papeleria.html">Papelería</a></li>
                     </ul>
                 </li>
-                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="#">📌 Quiénes somos</a></li>
+                <div class="cart-icon">
+                    <a href="carrito.html" id="cart-link" style="background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; text-decoration: none;">
+                        Ver Carrito
+                    </a>
+                    <a href="Checkout.html" style="background-color: green; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                        Ir a Checkout
+                    </a>
+                </div>
             </ul>
         </nav>
     </header>
-    
     <main>
         <h2>Bienvenido a nuestra tienda</h2>
-        <p>Explora nuestros productos y agrega al carrito.</p>
 
         <!-- Ropa -->
         <section id="ropa">
@@ -206,6 +81,7 @@
                     <button onclick="agregarAlCarrito('Tennis Nike Blazzer Mid Talla 24', 899.99, 'assets/tennis.jpg')">Agregar al carrito</button>
                 </div>
             </div>
+            <button class="ver-mas-btn" onclick="window.location.href='ropa.html'">Ver más</button>
         </section>
 
         <!-- Tecnología -->
@@ -237,6 +113,7 @@
                     <button onclick="agregarAlCarrito('Control PS5 Morado', 800.00, 'Assets/contro.jpg')">Agregar al carrito</button>
                 </div>
             </div>
+            <button class="ver-mas-btn" onclick="window.location.href='tecnologia.html'">Ver más</button>
         </section>
 
         <!-- Papelería -->
@@ -268,14 +145,42 @@
                     <button onclick="agregarAlCarrito('Paquete lapiceros 4 piezas C/ Lápiz Scribe', 19.99, 'Assets/lapiceros.jpg')">Agregar al carrito</button>
                 </div>
             </div>
+            <button class="ver-mas-btn" onclick="window.location.href='papeleria.html'">Ver más</button>
         </section>
     </main>
     
+    <script src="script.js"></script>
+
     <script>
-        // Función para agregar al carrito (simulada)
+        // Función para agregar productos al carrito
         function agregarAlCarrito(nombre, precio, imagen) {
+            // Obtener el carrito actual del localStorage o inicializarlo vacío
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+            // Buscar si el producto ya está en el carrito
+            const productoExistente = carrito.find(producto => producto.nombre === nombre);
+
+            if (productoExistente) {
+                // Incrementar la cantidad si ya existe
+                productoExistente.cantidad += 1;
+            } else {
+                // Agregar un nuevo producto al carrito
+                carrito.push({ nombre, precio, imagen, cantidad: 1 });
+            }
+
+            // Guardar el carrito actualizado en localStorage
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+
+            // Notificar al usuario
             alert(`Producto agregado al carrito: ${nombre}\nPrecio: $${precio}`);
-            // Aquí deberías implementar la lógica real del carrito
+        }
+    </script>
+
+    <script>
+
+        // Notificar al usuario
+        function notificarUsuario(nombre, precio) {
+            alert(`Producto agregado al carrito: ${nombre}\nPrecio: $${precio}`);
         }
 
         // Sistema de autenticación
@@ -303,6 +208,12 @@
                 window.location.reload();
             });
         });
+
+        // Función para ver más productos
+        function verMas(categoria) {
+            alert(`Ver más productos de la categoría: ${categoria}`);
+            // Aquí deberías implementar la lógica real para cargar más productos
+        }
     </script>
 </body>
 </html>

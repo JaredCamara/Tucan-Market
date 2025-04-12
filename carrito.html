@@ -3,37 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito - Tienda Virtual</title>
+    <title>Carrito</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">
-            <img src="Assets/Logo.jpg" alt="Logo Tienda Virtual">
+        <!-- Texto del título -->
+        <div class="logo2">
+          <img src="assets\logoTucan.PNG" alt="Logo">
+          <h1>Tucan Market</h1>
+      </div>
+    
+        <!-- Barra de estado de login -->
+        <div id="login-status">
+            <span id="user-greeting"></span>
+            <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
         </div>
-        <h1>Carrito de Compras</h1>
+    
+        <div class="logo">
+            <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo">
+        </div>
+    
+        <!-- MENÚ HORIZONTAL -->
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
+            <ul class="menu">
+                <li><a href="index.html">🏠 Inicio</a></li>
+                <li><a href="#">🔥 Tendencias</a></li>
+                <li class="dropdown">
+                    <a href="categorias.html">💸 Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="ropa.html">Ropa</a></li>
+                        <li><a href="tecnologia.html">Tecnología</a></li>
+                        <li><a href="papeleria.html">Papelería</a></li>
+                    </ul>
+                </li>
+                <li><a href="quienes-somos.html">📌 Quiénes somos</a></li>
+                <div class="cart-icon">
+                    <a href="carrito.html" id="cart-link" style="background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; text-decoration: none;">
+                        Ver Carrito
+                    </a>
+                    <a href="Checkout.html" style="background-color: green; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                        Ir a Checkout
+                    </a>
+                </div>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Productos en tu carrito</h2>
-
-        <section id="productosCarrito">
-            <!-- Aquí se agregarán los productos dinámicamente con JavaScript -->
-        </section>
-
-        <div id="total">
-            <h3>Total: $<span id="totalPrecio">0.00</span></h3>
+        <div id="carrito-container">
+            <!-- Aquí se mostrarán los productos del carrito -->
         </div>
-
-        <button onclick="location.href='checkout.html'">Ir al Checkout</button>
+        <div id="total-container">
+            <!-- Aquí se mostrará el total -->
+        </div>
+        <div id="checkout-container">
+            <!-- Aquí se mostrará el botón de checkout -->
+        </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        // Cargar los productos del carrito desde localStorage
+        document.addEventListener('DOMContentLoaded', function () {
+            const carritoContainer = document.getElementById('carrito-container');
+            const totalContainer = document.getElementById('total-container');
+            const checkoutContainer = document.getElementById('checkout-container');
+            let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            let total = 0;
+
+            // Función para actualizar el carrito en la interfaz
+            function actualizarCarrito() {
+                carritoContainer.innerHTML = '';
+                total = 0;
+
+                if (carrito.length === 0) {
+                    carritoContainer.innerHTML = '<p>El carrito está vacío.</p>';
+                    totalContainer.innerHTML = '';
+                    checkoutContainer.innerHTML = '';
+                    return;
+                }
+
+                carrito.forEach((producto, index) => {
+                    const productoDiv = document.createElement('div');
+                    productoDiv.classList.add('producto-carrito');
+                    productoDiv.innerHTML = `
+                        <p>${producto.nombre}</p>
+                        <img src="${producto.imagen}" alt="${producto.nombre}" width="100">
+                        <p>Precio: $${producto.precio.toFixed(2)}</p>
+                        <p>Cantidad: ${producto.cantidad}</p>
+                        <button class="eliminar-btn" data-index="${index}" style="background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                            Eliminar
+                        </button>
+                    `;
+                    carritoContainer.appendChild(productoDiv);
+
+                    // Sumar el precio al total
+                    total += producto.precio * producto.cantidad;
+                });
+
+                // Mostrar el total
+                totalContainer.innerHTML = `<h2>Total: $${total.toFixed(2)}</h2>`;
+
+                // Mostrar el botón de checkout
+                checkoutContainer.innerHTML = `
+                    <button id="checkout-btn" style="background-color: green; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+                        Ir a Checkout
+                    </button>
+                `;
+
+                // Agregar funcionalidad al botón de checkout
+                const checkoutButton = document.getElementById('checkout-btn');
+                if (checkoutButton) {
+                    checkoutButton.addEventListener('click', function () {
+                        window.location.href = 'checkout.html';
+                    });
+                }
+
+                // Agregar funcionalidad a los botones de eliminar
+                agregarEventosEliminar();
+            }
+
+            // Función para agregar eventos a los botones de eliminar
+            function agregarEventosEliminar() {
+                const eliminarButtons = document.querySelectorAll('.eliminar-btn');
+                eliminarButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        const index = parseInt(this.getAttribute('data-index')); // Convertir el índice a número
+                        if (!isNaN(index)) {
+                            carrito.splice(index, 1); // Eliminar el producto del carrito
+                            localStorage.setItem('carrito', JSON.stringify(carrito)); // Actualizar localStorage
+                            actualizarCarrito(); // Actualizar la vista
+                        }
+                    });
+                });
+            }
+
+            // Inicializar la vista del carrito
+            actualizarCarrito();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>papeleria-nuestra tienda</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <header>
+    <!-- Texto del título -->
+    <div class="logo2">
+      <img src="assets\logoTucan.PNG" alt="Logo">
+      <h1>Tucan Market</h1>
+  </div>
+
+    <!-- Barra de estado de login -->
+    <div id="login-status">
+        <span id="user-greeting"></span>
+        <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
+    </div>
+
+    <div class="logo">
+        <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo">
+    </div>
+
+    <!-- MENÚ HORIZONTAL -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">🏠 Inicio</a></li>
+            <li><a href="#">🔥 Tendencias</a></li>
+            <li class="dropdown">
+                <a href="categorias.html">💸 Categorías</a>
+                <ul class="submenu">
+                    <li><a href="ropa.html">Ropa</a></li>
+                    <li><a href="tecnologia.html">Tecnología</a></li>
+                    <li><a href="#papeleria">Papelería</a></li>
+                </ul>
+            </li>
+            <li><a href="#">📌 Quiénes somos</a></li>
+            <div class="cart-icon">
+              <a href="carrito.html" id="cart-link" style="background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; margin-right: 10px; text-decoration: none;">
+                  Ver Carrito
+              </a>
+              <a href="Checkout.html" style="background-color: green; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer;">
+                Ir a Checkout
+            </a>
+          </div>
+        </ul>
+    </nav>
+</header>
+
+  <main>
+    <h2>Papelería</h2>
+
+  <!-- CARRUSEL DE VIDEO -->
+  <div class="carousel-container">
+    <div class="carousel-images">
+      <!-- Video 1 -->
+      <div class="video-item active">
+        <iframe width="788" height="443" src="https://www.youtube.com/embed/eAlfAm17TWs?autoplay=1&mute=1" title="Cuadernos Norma Color 360" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>      </div>
+    </div>
+  </div>
+  <!-- TÍTULO DE BANNERS -->
+  <div class="banner-title">
+    Lo mejor está aquí y tú escoges
+  </div>
+
+  <!-- BANNER DE IMÁGENES ROTATIVAS -->
+  <div class="image-banner-container">
+    <div class="image-banner-images">
+      <div class="banner-item">
+        <img class="active" src="https://m.media-amazon.com/images/I/61EEXTXVptL._AC_UF894,1000_QL80_.jpg" alt="Champion">
+        <button class="view-button">Libretas</button>
+      </div>
+      <div class="banner-item">
+        <img src="https://consumepachuca.com/wp-content/uploads/2021/10/Lapiceros.jpg" alt="Nike">
+        <button class="view-button">Lapiceros </button>
+      </div>
+      <div class="banner-item">
+        <img src="https://www.adosa.com.mx/media/catalog/product/cache/4db89bde2062a3745aaded91f69a9032/0/8/087589_2.jpg" alt="Hang Ten">
+        <button class="view-button">Calculadoras</button>
+      </div>
+      <div class="banner-item">
+        <img src="https://www.officedepot.com.mx/medias/43122.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MzIzMDE2fGltYWdlL2pwZWd8YURnM0wyaGpaUzh4TVRZek1UY3dOVGcwT1RnNE5pODBNekV5TWk1cWNHZGZNVEl3TUdaMGR3fDRmMGEyY2IyYmIwNzEzZWEwMDYxNzlkZDUwZjQ0OTRiNzYzMDEwNGM3MjgwMGQ3YzYyODliODQ0MmNiZjcyNDg" alt="Banner 4">
+        <button class="view-button">Hojas de colores</button>
+      </div>
+      <div class="banner-item">
+        <img src="https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00007033050694L.jpg" alt="Banner 5">
+        <button class="view-button">Correctores</button>
+      </div>
+    </div>
+
+    <div class="image-banner-buttons">
+      <button onclick="changeBanner(-1)">❮</button>
+      <button onclick="changeBanner(1)">❯</button>
+    </div>
+  </div>
+
+  <!-- SECCIÓN DE PRODUCTOS MÁS GRANDES -->
+  <h2>Creemos que te Gustarán</h2>
+  <div class="product-container">
+    <div class="product">
+      <img src="https://www.officedepot.com.mx/medias/7257-2.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MjYxNDcyfGltYWdlL2pwZWd8YURobUwyaGhOaTh4TURBek9UazBPRGd6TmpnNU5DNXFjR2N8MjE4MzhmNzMxNGZlMzMwYzRlYTM0YTcwZGYxMmE4YmFmNjI5MWNkM2YzMjhjYjRhZDZhZjlmYzE3MGVmYzI4Ng" alt="Gorra Yankees new era">
+      <h3>Pegamento pritt chico</h3>
+      <p>Para pegar lo que gustes</p>
+      <p class="price">$12,99</p>
+      <button class="add-to-cart" onclick="addToCart(1, 'Pegamento Pritt chico', 12.99)">Agregar al carrito</button>
+    </div>
+
+    <div class="product">
+      <img src="https://kokoro.mx/cdn/shop/files/Kit-De-Tijeras-De-Barberia-Profesionales-Kokoro-Old-School-FRENTE-SHOPI.jpg?v=1742019468" alt="Tenis Nike Air Force">
+      <h3>Tijera Old School</h3>
+      <p>Con buen filo para cortar</p>
+      <p class="price">$15.99</p>
+      <button class="add-to-cart" onclick="addToCart(2, 'Tijera Old School', 15.99)">Agregar al carrito</button>
+    </div>
+
+    <div class="product">
+      <img src="https://officemax.vtexassets.com/arquivos/ids/1346797/12950_1.jpg?v=638158805965670000" alt="Camisa Hang Ten">
+      <h3>Libreta Profesional 100 hojas Cuadros Grandes</h3>
+      <p>Libreta de pasta dura </p>
+      <p class="price">$49,99</p>
+      <button class="add-to-cart" onclick="addToCart(3, 'Libreta Profesional 100 hojas Cuadros Grandes', 49.99)">Agregar al carrito</button>
+    </div>
+
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgaToPTEnhMW0wZoAW34smlB-iNclOH_Q9kQ&s" alt="Puma RS-X">
+      <h3>Paquete lapiceros 4 piezas C/ Lápiz</h3>
+      <p>paquete de 4 lapiceros </p>
+      <p class="price">$25,00</p>
+      <button class="add-to-cart" onclick="addToCart(4, 'Paquete lapiceros 4 piezas C/ Lápiz', 25.00)">Agregar al carrito</button>
+    </div>
+
+    <div class="product">
+      <img src="https://m.media-amazon.com/images/I/81Oili+YcUL._AC_SX425_.jpg" alt="Pantalón Adidas Tiro">
+      <h3>Calculadora Cientifica</h3>
+      <p>Casio FX-82MS-2-S-MH de 240 Funciones con Pantalla de 2 Lineas, Negro, Med</p>
+      <p class="price">$475</p>
+      <button class="add-to-cart" onclick="addToCart(5, 'Calculadora Cientifica', 475)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- CARRITO DE COMPRAS MEJORADO -->
+  <div id="cart-sidebar">
+    <h3>Tu Carrito (<span id="cart-count-sidebar">0</span>)</h3>
+    <div id="cart-items"></div>
+    <p class="cart-total">Total: $<span id="cart-total">0</span></p>
+    <button id="checkout-btn" onclick="goToCheckout()">Ir al Checkout</button>
+  </div>
+
+  <script>
+    // Variables globales
+    let cart = [];
+    let currentImage = 0;
+    let currentBanner = 0;
+    const images = document.querySelectorAll('.carousel-images img');
+    const banners = document.querySelectorAll('.image-banner-images .banner-item');
+
+    // Función para cambiar imágenes del carrusel
+    function changeImage(direction) {
+      images[currentImage].classList.remove('active');
+      currentImage = (currentImage + direction + images.length) % images.length;
+      images[currentImage].classList.add('active');
+    }
+
+    // Función para cambiar banners
+    function changeBanner(direction) {
+      banners[currentBanner].classList.remove('active');
+      currentBanner = (currentBanner + direction + banners.length) % banners.length;
+      banners[currentBanner].classList.add('active');
+    }
+
+    // Funciones del carrito de compras
+    function addToCart(id, name, price) {
+      // Buscar si el producto ya está en el carrito
+      const existingItem = cart.find(item => item.id === id);
+      
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ id, name, price, quantity: 1 });
+      }
+      
+      updateCartDisplay();
+      showCartSidebar();
+      
+      // Mostrar notificación
+      showNotification(`${name} agregado al carrito`);
+    }
+
+    function showNotification(message) {
+      const notification = document.createElement('div');
+      notification.className = 'notification';
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        notification.classList.add('show');
+      }, 10);
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          document.body.removeChild(notification);
+        }, 300);
+      }, 3000);
+    }
+
+    function updateCartDisplay() {
+      // Actualizar contador en el ícono del carrito
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").textContent = totalItems;
+      document.getElementById("cart-count-sidebar").textContent = totalItems;
+      
+      // Actualizar lista de productos en el sidebar
+      const cartItemsEl = document.getElementById("cart-items");
+      cartItemsEl.innerHTML = '';
+      
+      let total = 0;
+      
+      cart.forEach(item => {
+        const itemEl = document.createElement('div');
+        itemEl.className = 'cart-item';
+        itemEl.innerHTML = `
+          <span>${item.name} x${item.quantity}</span>
+          <span>$${(item.price * item.quantity).toLocaleString()}</span>
+        `;
+        cartItemsEl.appendChild(itemEl);
+        total += item.price * item.quantity;
+      });
+      
+      // Actualizar total
+      document.getElementById("cart-total").textContent = total.toLocaleString();
+    }
+
+    function showCartSidebar() {
+      const sidebar = document.getElementById("cart-sidebar");
+      sidebar.style.display = 'block';
+      
+      // Ocultar después de 5 segundos si no hay interacción
+      setTimeout(() => {
+        if (!sidebar.matches(':hover')) {
+          sidebar.style.display = 'none';
+        }
+      }, 5000);
+    }
+
+    function goToCheckout() {
+      if (cart.length > 0) {
+        // Guardar carrito en localStorage para la página de checkout
+        localStorage.setItem('shoppingCart', JSON.stringify(cart));
+        window.location.href = "checkout.html";
+      } else {
+        alert("Tu carrito está vacío. Agrega productos primero.");
+      }
+    }
+
+    // Event listeners
+    document.getElementById("cart-link").addEventListener('click', function(e) {
+      e.preventDefault();
+      const sidebar = document.getElementById("cart-sidebar");
+      sidebar.style.display = sidebar.style.display === 'block' ? 'none' : 'block';
+    });
+
+    // Mantener el sidebar visible al hacer hover
+    document.getElementById("cart-sidebar").addEventListener('mouseenter', function() {
+      this.style.display = 'block';
+    });
+
+    document.getElementById("cart-sidebar").addEventListener('mouseleave', function() {
+      this.style.display = 'none';
+    });
+
+    // Estilo para notificaciones
+    const style = document.createElement('style');
+    style.textContent = `
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #27ae60;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1001;
+      }
+      .notification.show {
+        opacity: 1;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+
+</body>
+</html>

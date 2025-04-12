@@ -249,6 +249,13 @@
             
             return false;
         }
+
+        // Simular inicio de sesión exitoso
+        document.getElementById("login-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Evitar recarga de la página
+            localStorage.setItem("isLoggedIn", "true"); // Guardar estado de sesión
+            window.location.href = "index.html"; // Redirigir al inicio
+        });
     </script>
 </body>
 </html>
