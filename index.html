@@ -897,6 +897,228 @@
     .banner-carreras-container {
       position: relative;
       width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carreras-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carrera-item {
+      flex: 0 0 100%; /* Cada elemento ocupa el 100% del ancho del contenedor */
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .carrera-item img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .carrera-item button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .carrera-item button:hover {
+      background-color: #555;
+    }
+
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .flecha.izquierda {
+      left: 10px;
+    }
+
+    .flecha.derecha {
+      right: 10px;
+    }
+
+    .flecha:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .banner-carreras-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carreras-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carrera-item {
+      flex: 0 0 100%; /* Cada elemento ocupa el 100% del ancho del contenedor */
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .carrera-item img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .carrera-item button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .carrera-item button:hover {
+      background-color: #555;
+    }
+
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .flecha.izquierda {
+      left: 10px;
+    }
+
+    .flecha.derecha {
+      right: 10px;
+    }
+
+    .flecha:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .banner-carreras-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carreras-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carrera-item {
+      flex: 0 0 100%; /* Cada elemento ocupa el 100% del ancho del contenedor */
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .carrera-item img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .carrera-item button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .carrera-item button:hover {
+      background-color: #555;
+    }
+
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .flecha.izquierda {
+      left: 10px;
+    }
+
+    .flecha.derecha {
+      right: 10px;
+    }
+
+    .flecha:hover {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+
+    .banner-carreras-container {
+      position: relative;
+      width: 100%;
       max-width: 400px; /* Ajusta el ancho del contenedor */
       height: 500px; /* Altura fija para el carrusel */
       margin: 0 auto;
@@ -1405,9 +1627,26 @@
     let contadorCarrito = 0;
 
     function agregarAlCarrito(nombre, precio) {
-      alert(`Agregado: ${nombre} - $${precio}`);
-      contadorCarrito++;
+      // Encuentra el botón que disparó el evento y su contenedor de producto
+      const boton = event.target;
+      const productoDiv = boton.closest('.producto, .banner-item, .producto-banner-item');
+      const img = productoDiv.querySelector('img');
+      const imagen = img ? img.src : '';
+
+      // Recupera el carrito actual o crea uno nuevo
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+      // Agrega el nuevo producto
+      carrito.push({ nombre, precio, imagen });
+
+      // Guarda el carrito actualizado
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+
+      // Actualiza el contador visual
+      contadorCarrito = carrito.length;
       document.getElementById('contador-carrito').textContent = contadorCarrito;
+
+      alert(`Agregado: ${nombre} - $${precio}`);
     }
 
     function buscarProducto() {
@@ -1415,8 +1654,9 @@
       alert(`Buscando: ${busqueda}`);
     }
 
+    // ...existing code...
     function verCarrito() {
-      alert(`Tienes ${contadorCarrito} productos en tu carrito.`);
+      window.location.href = "carrito.html";
     }
 
     // Script para el banner deslizante
