@@ -5,19 +5,212 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - Tienda Virtual</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Material Icons para el carrito -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background: #f5f5f5;
+      }
+      .header-dark {
+        background: #353535;
+        border-bottom: 2px solid #222;
+        margin-bottom: 24px;
+      }
+      .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 12px 32px;
+      }
+      .logo img {
+        height: 64px;
+        border-radius: 8px;
+        background: #fff;
+      }
+      .menu {
+        display: flex;
+        gap: 40px;
+        list-style: none;
+        margin: 0 40px 0 40px;
+        padding: 0;
+      }
+      .menu li a {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.15em;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .menu li a:hover {
+        color: #ffd600;
+      }
+      .search-form {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .search-form input[type="text"] {
+        padding: 8px 12px;
+        border-radius: 6px;
+        border: none;
+        font-size: 1em;
+        width: 200px;
+      }
+      .search-form button {
+        padding: 8px 16px;
+        border-radius: 6px;
+        border: none;
+        background: #444;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .search-form button:hover {
+        background: #1976d2;
+      }
+      .carrito-icono {
+        position: relative;
+        margin-left: 24px;
+      }
+      .carrito-contador {
+        position: absolute;
+        top: -8px;
+        right: -12px;
+        background: #f00;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 0.95em;
+        padding: 2px 8px;
+        font-weight: bold;
+      }
+      /* Productos en el carrito */
+      .panel-producto-carrito {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px;
+        margin-bottom: 18px;
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        transition: box-shadow 0.2s;
+      }
+      .panel-producto-carrito:hover {
+        box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+      }
+      .panel-producto-carrito img {
+        width: 90px;
+        height: 90px;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 1px solid #eee;
+        background: #f9f9f9;
+      }
+      .panel-producto-carrito .info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+      .panel-producto-carrito .nombre {
+        font-weight: bold;
+        font-size: 1.15em;
+        color: #1a237e;
+      }
+      .panel-producto-carrito .descripcion {
+        font-size: 0.98em;
+        color: #555;
+      }
+      .panel-producto-carrito .precio {
+        color: #2d8f2d;
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      .panel-producto-carrito button {
+        padding: 7px 14px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-left: 4px;
+        transition: background 0.2s, color 0.2s;
+      }
+      .panel-producto-carrito button:first-of-type {
+        background: #1976d2;
+        color: #fff;
+      }
+      .panel-producto-carrito button:last-of-type {
+        background: #e74c3c;
+        color: #fff;
+      }
+      #total {
+        margin-top: 30px;
+        text-align: right;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #1a237e;
+      }
+      @media (max-width: 900px) {
+        .header-container {
+          flex-direction: column;
+          gap: 12px;
+          padding: 12px 8px;
+        }
+        .menu {
+          gap: 18px;
+          margin: 0;
+        }
+        .search-form input[type="text"] {
+          width: 120px;
+        }
+      }
+      @media (max-width: 600px) {
+        .panel-producto-carrito {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .panel-producto-carrito img {
+          width: 100%;
+          height: auto;
+        }
+        #total {
+          text-align: left;
+        }
+        .logo img {
+          height: 40px;
+        }
+      }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header-dark">
+      <div class="header-container">
         <div class="logo">
-            <img src="Assets/Logo.jpg" alt="Logo Tienda Virtual">
+          <img src="Assets/Logo.jpg" alt="Logo Tienda Virtual">
         </div>
-        <h1>Carrito de Compras</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="checkout.html">Checkout</a></li>
-            </ul>
+          <ul class="menu">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+            <li><a href="micuenta.html">Mi Cuenta</a></li>
+          </ul>
         </nav>
+        <form class="search-form" action="busqueda.html" method="get">
+          <input type="text" name="q" placeholder="Buscar productos...">
+          <button type="submit">Buscar</button>
+        </form>
+        <div class="carrito-icono">
+          <a href="carrito.html" style="position:relative;">
+            <span class="material-icons" style="font-size:28px;color:#e0e0e0;">shopping_cart</span>
+            <span class="carrito-contador" id="contadorCarrito">0</span>
+          </a>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -31,9 +224,56 @@
             <h3>Total: $<span id="totalPrecio">0.00</span></h3>
         </div>
 
-        <button onclick="location.href='checkout.html'">Ir al Checkout</button>
+        <button onclick="location.href='checkout.html'" style="margin-top:20px;padding:10px 24px;font-size:1.1em;background:#1976d2;color:#fff;border:none;border-radius:6px;cursor:pointer;">Ir al Checkout</button>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+  // Cargar productos del carrito
+  function mostrarCarrito() {
+    const productosCarrito = document.getElementById('productosCarrito');
+    const totalPrecio = document.getElementById('totalPrecio');
+    const contadorCarrito = document.getElementById('contadorCarrito');
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    productosCarrito.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach((producto, index) => {
+      total += parseFloat(producto.precio);
+      productosCarrito.innerHTML += `
+        <div class="panel-producto-carrito">
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <div class="info">
+            <div class="nombre">${producto.nombre}</div>
+            <div class="descripcion">${producto.descripcion ? producto.descripcion : ''}</div>
+            <div class="precio">$${parseFloat(producto.precio).toFixed(2)}</div>
+          </div>
+          <button onclick="agregarUno(${index})">Agregar</button>
+          <button onclick="eliminarDelCarrito(${index})">Eliminar</button>
+        </div>
+      `;
+    });
+
+    totalPrecio.textContent = total.toFixed(2);
+    contadorCarrito.textContent = carrito.length;
+  }
+
+  function agregarUno(index) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    const producto = carrito[index];
+    carrito.push(producto); // Agrega otra unidad igual
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarCarrito();
+  }
+
+  function eliminarDelCarrito(index) {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.splice(index, 1); // Elimina el producto en esa posición
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    mostrarCarrito();
+  }
+
+  // Mostrar el carrito al cargar la página
+  mostrarCarrito();
+</script>
 </body>
 </html>
