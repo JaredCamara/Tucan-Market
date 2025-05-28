@@ -3,427 +3,164 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ropa - Nuestra Tienda</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Ropa-nuestra tienda</title>
+  <link rel="stylesheet" href="style.css">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      background-color: #f4f4f4;
-      flex-direction: column;
-    }
-
-    /* MENÚ HORIZONTAL */
-    header {
-      background-color: #fdfeff;
-      color: white;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-    }
-
-    header .logo img {
-      height: 150px;
-      margin-right: 10px;
-    }
-
-    .menu {
-      list-style-type: none;
-      display: flex;
-      gap: 20px;
-    }
-
-    .menu li {
-      padding: 10px;
-    }
-
-    .menu a {
-      color: black;
-      text-decoration: none;
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .menu a:hover {
-      color: #007bff;
-    }
-
-    .cart-icon a {
-      color: rgb(0, 0, 0);
-      font-size: 22px;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .cart-count {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      background-color: #ff0000;
-      color: white;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 12px;
-    }
-
-    /* CARRUSEL DE VIDEO */
-    .carousel-container {
-      position: relative;
-      width: 100%;
-      height: 350px;
-      background-color: #000;
-      display: flex;
-      justify-content: center; /* Centra el iframe horizontalmente */
-      align-items: center; /* Centra el iframe verticalmente */
-    }
-
-    .carousel-images {
-      display: flex;
-      width: 100%;
-      height: 100%;
-      justify-content: center;
-    }
-
-    .video-item {
-      width: 100%;
-      max-width: 100%; /* Asegura que el video ocupe el 100% de su contenedor */
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* BANNER DE IMÁGENES ROTATIVAS */
-    .image-banner-container {
-      position: relative;
-      width: 90%;
-      margin-top: 40px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .image-banner-images {
-      display: flex;
-      gap: 20px;
-      transition: transform 1s ease;
-    }
-
-    .image-banner-images .banner-item {
-      position: relative;
-      width: 20%;
-    }
-
-    .image-banner-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .image-banner-images img:hover {
-      transform: scale(1.1);
-    }
-
-    .image-banner-buttons {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      z-index: 2;
-    }
-
-    .image-banner-buttons button {
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 18px;
-    }
-
-    /* BOTONES DE MARCA */
-    .view-button {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #007bff;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .view-button:hover {
-      background-color: #0056b3;
-    }
-
-    /* TÍTULO PRINCIPAL DE BANNERS */
-    .banner-title {
-      text-align: center;
-      font-size: 24px;
-      color: #333;
-      margin-top: 30px;
-      font-weight: bold;
-    }
-
-    /* PRODUCTOS */
-    h2 {
-      text-align: center;
-      margin: 30px 0 10px;
-    }
-
-    .product-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      justify-items: center;
-      padding: 0 20px 40px;
-    }
-
-    .product {
-      background-color: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      width: 200px;
-      text-align: center;
-    }
-
-    .product img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      margin-bottom: 10px;
-    }
-
-    .product h3 {
-      margin: 5px 0;
-      font-size: 16px;
-    }
-
-    .product p {
-      margin: 5px 0;
-      color: #333;
-    }
-
-    .product .price {
-      font-weight: bold;
-      color: #27ae60;
-      font-size: 18px;
-    }
-
-    .add-to-cart {
-      background-color: #27ae60;
-      color: white;
-      border: none;
-      padding: 8px 10px;
-      cursor: pointer;
-      margin-top: 8px;
-      border-radius: 4px;
-      width: 100%;
-      transition: background-color 0.3s;
-    }
-
-    .add-to-cart:hover {
-      background-color: #1e8449;
-    }
-
-    /* CARRITO FLOTANTE */
-    #cart-sidebar {
-      position: fixed;
-      right: 20px;
-      top: 200px;
-      width: 300px;
-      background: white;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 1000;
-      display: none;
-    }
-
-    #cart-sidebar h3 {
-      margin-bottom: 15px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #eee;
-    }
-
-    .cart-total {
-      font-weight: bold;
-      margin-top: 15px;
-      text-align: right;
-    }
-
-    #checkout-btn {
-      background-color: #007bff;
-      color: white;
-      border: none;
-      padding: 10px;
-      width: 100%;
-      margin-top: 15px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    #checkout-btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
 </head>
 <body>
 
-  <!-- ENCABEZADO CON MENÚ HORIZONTAL -->
-  <header>
-    <div class="logo">
-      <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo">
-      <h1>Tienda de Ropa</h1>
+    <!-- Barra de estado de login -->
+    <div id="login-status">
+        <span id="user-greeting"></span>
+        <button id="logout-btn" style="display: none;">Cerrar Sesión</button>
     </div>
+
+    <!-- BANNER DE NAVEGACIÓN IGUAL AL INDEX -->
+<header style="background: #333; color: #fff; padding: 0;">
+  <div style="display: flex; align-items: center; justify-content: space-between; max-width: 100vw; padding: 0 30px;">
+    <div style="display: flex; align-items: center;">
+      <img src="https://iztapalapa3.tecnm.mx/departamentos/planeacion/comuydif/LOGO-VERTICAL.png" alt="Logo" style="height: 55px; margin-right: 18px;">
+      <nav>
+        <ul style="display: flex; gap: 28px; list-style: none; margin: 0; padding: 0;">
+          <li><a href="index.html" style="color: #fff; text-decoration: none; font-weight: bold;">Inicio</a></li>
+          <li><a href="#" style="color: #fff; text-decoration: none;">Quiénes Somos</a></li>
+          <li><a href="#" style="color: #fff; text-decoration: none;">Mi Cuenta</a></li>
+          <li><a href="#" style="color: #fff; text-decoration: none;">Contacto</a></li>
+          <li><a href="#" style="color: #fff; text-decoration: none;">Preguntas Frecuentes</a></li>
+          <li><a href="#" style="color: #fff; text-decoration: none;">Testimonios</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <input type="text" placeholder="Buscar productos..." style="padding: 5px 10px; border-radius: 3px; border: none;">
+      <button style="background: #666; color: #fff; border: none; padding: 5px 12px; border-radius: 3px; cursor: pointer;">Buscar</button>
+      <div class="carrito" onclick="verCarrito()">
+      <span class="carrito-icono">🛒</span>
+      <span class="contador" id="contador-carrito">0</span>
+    </div>
+  </div>
+</header>
+
+
+
     
-    <!-- MENÚ HORIZONTAL -->
-    <nav>
-      <ul class="menu">
-        <li><a href="index.html">🏠 Inicio</a></li>
-        <li><a href="#">🔥 Tendencias</a></li>
-        <li><a href="#">💸 Lo mejor a mejor precio</a></li>
-        <li><a href="#">📌 Quiénes somos</a></li>
-      </ul>
-    </nav>
 
-    <!-- ÍCONO DE CARRITO -->
-    <div class="cart-icon">
-      <a href="#" id="cart-link">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count" id="cart-count">0</span>
-      </a>
-    </div>
-  </header>
+  <main>
+    <h2>Ropa</h2>
 
-  <!-- CARRUSEL DE VIDEO -->
-  <div class="carousel-container">
-    <div class="carousel-images">
-      <!-- Video 1 -->
-      <div class="video-item active">
-        <iframe src="https://www.youtube.com/embed/pwLergHG81c?autoplay=1&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </div>
-    </div>
+  <!-- BANNER DE FOTOS INTERCAMBIABLES CON FLECHAS -->
+  <div class="photo-banner-container" style="max-width: 820px; margin: 0 auto 30px auto; position: relative;">
+    <img id="photo-banner-img" src="https://www.suescun.com.co/wp-content/uploads/2022/06/ofertas-de-papeleria-movil.jpg" alt="Banner 1" style="width: 100%; height: 380px; object-fit: cover; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.15);">
+    <button id="photo-banner-prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 22px; cursor: pointer;">❮</button>
+    <button id="photo-banner-next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); background: rgba(0,0,0,0.4); color: #fff; border: none; border-radius: 50%; width: 38px; height: 38px; font-size: 22px; cursor: pointer;">❯</button>
   </div>
-
-  <!-- TÍTULO DE BANNERS -->
-  <div class="banner-title">
-    Lo mejor está aquí y tú escoges
-  </div>
+  <script>
+    // Banner de fotos intercambiables
+    const photoBannerImages = [
+      "https://cdn-3.expansion.mx/dims4/default/6f498eb/2147483647/resize/1280x/quality/90/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F3a%2F45%2F54e215a343db8dc1676af8347592%2Fofertas-ropa.jpg",
+      "https://martimx.vtexassets.com/assets/vtex.file-manager-graphql/images/77258c3c-0ab8-40df-b1ea-b1e7483db124___2bb756a46da473c8c3776b62ccc5dd2c.jpg",
+      "https://www.informador.mx/__export/1672778123870/sites/elinformador/img/2023/01/03/istock-1176723601_1.jpg_788543494.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlT4l-F20aGg4f8AwbVRMaf5KO4Bm2kL5VFA&s",
+    ];
+    let photoBannerIndex = 0;
+    const photoBannerImg = document.getElementById('photo-banner-img');
+    document.getElementById('photo-banner-prev').onclick = function() {
+      photoBannerIndex = (photoBannerIndex - 1 + photoBannerImages.length) % photoBannerImages.length;
+      photoBannerImg.src = photoBannerImages[photoBannerIndex];
+    };
+    document.getElementById('photo-banner-next').onclick = function() {
+      photoBannerIndex = (photoBannerIndex + 1) % photoBannerImages.length;
+      photoBannerImg.src = photoBannerImages[photoBannerIndex];
+    };
+  </script>
 
   <!-- BANNER DE IMÁGENES ROTATIVAS -->
   <div class="image-banner-container">
     <div class="image-banner-images">
-      <div class="banner-item">
-        <img class="active" src="https://jpl.a.bigcontent.io/v1/static/champion-social-mujer-01-676dc57bfc3cd773d41882854c5af97d" alt="Champion">
-        <button class="view-button">Ver Champion</button>
-      </div>
-      <div class="banner-item">
-        <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/3021322-0101V1.jpg" alt="Nike">
-        <button class="view-button">Ver Nike</button>
-      </div>
-      <div class="banner-item">
-        <img src="https://m.media-amazon.com/images/I/41ZmTDZ0hSL._AC_.jpg" alt="Hang Ten">
-        <button class="view-button">Ver Hang Ten</button>
-      </div>
-      <div class="banner-item">
-        <img src="https://site-product.innovasport.com/img-test/682572-11/682572-11_1-1200x1200.jpg" alt="Banner 4">
-        <button class="view-button">Ver Puma</button>
-      </div>
-      <div class="banner-item">
-        <img src="https://i.pinimg.com/originals/60/ff/34/60ff340a11e80fa242ab37f5c110a194.webp" alt="Banner 5">
-        <button class="view-button">Ver Adidas</button>
-      </div>
-    </div>
-
-    <div class="image-banner-buttons">
-      <button onclick="changeBanner(-1)">❮</button>
-      <button onclick="changeBanner(1)">❯</button>
     </div>
   </div>
 
-  <!-- SECCIÓN DE PRODUCTOS -->
-  <h2>Crememos que te Gustaran </h2>
-  <div class="product-container">
-    <div class="product">
-      <img src="https://m.media-amazon.com/images/I/71IVdGlrL5L._AC_SX679_.jpg" alt="Gorra Yankees new era">
-      <h3>Gorra Forty Yankees</h3>
-      <p class="price">$1,199</p>
-      <button class="add-to-cart" onclick="addToCart(1, 'Gorra Forty Yankees', 1199)">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/b7d9211c-26e7-431a-ac24-b0540fb3c00f/air-force-1-07-zapatos-GjGXSP.png" alt="Tenis Nike Air Force">
-      <h3>Tenis Nike Air Force</h3>
-      <p class="price">$2,499</p>
-      <button class="add-to-cart" onclick="addToCart(2, 'Tenis Nike Air Force', 2499)">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/8a5bf5273d6a4d6e8638af8e00fe97f6_9366/Camisa_Hang_Ten_Relaxed_Fit_Blanco_IB4406_01_laydown.jpg" alt="Camisa Hang Ten">
-      <h3>Camisa Hang Ten</h3>
-      <p class="price">$599</p>
-      <button class="add-to-cart" onclick="addToCart(3, 'Camisa Hang Ten', 599)">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_600,h_600/global/387671/02/sv01/fnd/MEX/" alt="Puma RS-X">
-      <h3>Puma RS-X</h3>
-      <p class="price">$1,799</p>
-      <button class="add-to-cart" onclick="addToCart(4, 'Puma RS-X', 1799)">Agregar al carrito</button>
-    </div>
-
-    <div class="product">
-      <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/1a1a1a1a1a1a1a1a1a1aaf8e00fe97f6_9366/Pantalon_Adidas_Tiro_21_Negro_HM9203_01_laydown.jpg" alt="Pantalón Adidas Tiro">
-      <h3>Pantalón Adidas Tiro</h3>
-      <p class="price">$899</p>
-      <button class="add-to-cart" onclick="addToCart(5, 'Pantalón Adidas Tiro', 899)">Agregar al carrito</button>
-    </div>
+  <!-- SECCIÓN DE ROPA DEPORTIVA -->
+<h2 style="margin-top:40px;">Ropa Deportiva</h2>
+<div class="ropa-deportiva-grid" style="
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-bottom: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+">
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://ss859.suburbia.com.mx/xl/5008866645.jpg" alt="Playera Deportiva Hombre" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Playera Deportiva Hombre</h3>
+    <p>Transpirable, ligera y cómoda para entrenar</p>
+    <p class="price">$399</p>
+    <button onclick="agregarAlCarrito('Playera Deportiva Hombre', 399)">Agregar al carrito</button>
   </div>
-
-  <!-- CARRITO DE COMPRAS -->
-  <div id="cart-sidebar">
-    <h3>Tu Carrito (<span id="cart-count-sidebar">0</span>)</h3>
-    <div id="cart-items"></div>
-    <p class="cart-total">Total: $<span id="cart-total">0</span></p>
-    <button id="checkout-btn" onclick="goToCheckout()">Ir al Checkout</button>
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://chapurmx.vtexassets.com/arquivos/ids/317386-800-auto?v=638421432672800000&width=800&height=auto&aspect=true" alt="Short Deportivo Mujer" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Short Deportivo Mujer</h3>
+    <p>Ideal para correr o hacer ejercicio, color negro</p>
+    <p class="price">$349</p>
+    <button onclick="agregarAlCarrito('Short Deportivo Mujer', 349)">Agregar al carrito</button>
   </div>
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/5be02bcded1946ada051c82a0be45e42_9366/sudadera-con-gorro-adidas-basketball-spacer-unisex.jpg" alt="Sudadera Deportiva Unisex" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Sudadera Deportiva Unisex</h3>
+    <p>Perfecta para entrenar en clima frío</p>
+    <p class="price">$599</p>
+    <button onclick="agregarAlCarrito('Sudadera Deportiva Unisex', 599)">Agregar al carrito</button>
+  </div>
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://ss205.liverpool.com.mx/xl/1128415429.jpg" alt="Pants Deportivo Hombre" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Pants Deportivo Hombre</h3>
+    <p>Cómodos y resistentes, color gris</p>
+    <p class="price">$499</p>
+    <button onclick="agregarAlCarrito('Pants Deportivo Hombre', 499)">Agregar al carrito</button>
+  </div>
+</div>
+
+  <!-- SECCIÓN DE ROPA DEL INSTITUTO TECNOLÓGICO DE CANCÚN -->
+<h2 style="margin-top:40px;">Ropa del Instituto Tecnológico de Cancún</h2>
+<div class="ropa-itc-grid" style="
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-bottom: 40px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+">
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCojfhkd0M4ZZGi_nTFQgRmlMztJnfcuc7Yg&s" alt="Playera Oficial IT Cancún" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Playera Oficial IT Cancún</h3>
+    <p>Playera blanca con logo institucional</p>
+    <p class="price">$250</p>
+    <button onclick="agregarAlCarrito('Playera Oficial IT Cancún', 250)">Agregar al carrito</button>
+  </div>
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/170377/Sudadera-Essential-TEC-zipper-unisex-azul-1.jpg?v=637780754923670000" alt="Sudadera IT Cancún" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Sudadera IT Cancún</h3>
+    <p>Sudadera azul marino con escudo bordado</p>
+    <p class="price">$480</p>
+    <button onclick="agregarAlCarrito('Sudadera IT Cancún', 480)">Agregar al carrito</button>
+  </div>
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/180654/image-8b4a5216b8b545caab7967d6a32ab5c3.jpg?v=638198516853400000" alt="Pants Deportivo IT Cancún" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Pants Deportivo IT Cancún</h3>
+    <p>Pants gris con detalles verdes y logo</p>
+    <p class="price">$350</p>
+    <button onclick="agregarAlCarrito('Pants Deportivo IT Cancún', 350)">Agregar al carrito</button>
+  </div>
+  <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+    <img src="https://tecstore.mx/cdn/shop/files/WS-MVPTT213WBV-SB-HR-F.jpg?v=1747888969" alt="Gorra IT Cancún" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+    <h3>Gorra IT Cancún</h3>
+    <p>Gorra ajustable con logo del instituto</p>
+    <p class="price">$180</p>
+    <button onclick="agregarAlCarrito('Gorra IT Cancún', 180)">Agregar al carrito</button>
+  </div>
+</div>
 
   <script>
     // Variables globales
@@ -447,68 +184,29 @@
       banners[currentBanner].classList.add('active');
     }
 
-    // Funciones del carrito de compras
-    function addToCart(id, name, price) {
-      // Buscar si el producto ya está en el carrito
-      const existingItem = cart.find(item => item.id === id);
-      
-      if (existingItem) {
-        existingItem.quantity += 1;
-      } else {
-        cart.push({ id, name, price, quantity: 1 });
-      }
-      
-      updateCartDisplay();
-      showCartSidebar();
+    // Inicializa el contador del carrito al cargar la página
+    function actualizarContadorCarrito() {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      document.getElementById('contador-carrito').textContent = carrito.length;
+    }
+    actualizarContadorCarrito();
+
+    // Agregar producto al carrito
+    function agregarAlCarrito(nombre, precio) {
+      const boton = event.target;
+      const productoDiv = boton.closest('.producto, .banner-item, .producto-banner-item');
+      const img = productoDiv ? productoDiv.querySelector('img') : null;
+      const imagen = img ? img.src : '';
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.push({ nombre, precio, imagen });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      actualizarContadorCarrito();
+      alert(`Agregado: ${nombre} - $${precio}`);
     }
 
-    function updateCartDisplay() {
-      // Actualizar contador en el ícono del carrito
-      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-      document.getElementById("cart-count").textContent = totalItems;
-      document.getElementById("cart-count-sidebar").textContent = totalItems;
-      
-      // Actualizar lista de productos en el sidebar
-      const cartItemsEl = document.getElementById("cart-items");
-      cartItemsEl.innerHTML = '';
-      
-      let total = 0;
-      
-      cart.forEach(item => {
-        const itemEl = document.createElement('div');
-        itemEl.className = 'cart-item';
-        itemEl.innerHTML = `
-          <span>${item.name} x${item.quantity}</span>
-          <span>$${item.price * item.quantity}</span>
-        `;
-        cartItemsEl.appendChild(itemEl);
-        total += item.price * item.quantity;
-      });
-      
-      // Actualizar total
-      document.getElementById("cart-total").textContent = total;
-    }
-
-    function showCartSidebar() {
-      const sidebar = document.getElementById("cart-sidebar");
-      sidebar.style.display = 'block';
-      
-      // Ocultar después de 5 segundos si no hay interacción
-      setTimeout(() => {
-        if (!sidebar.matches(':hover')) {
-          sidebar.style.display = 'none';
-        }
-      }, 5000);
-    }
-
-    function goToCheckout() {
-      if (cart.length > 0) {
-        // Guardar carrito en localStorage para la página de checkout
-        localStorage.setItem('shoppingCart', JSON.stringify(cart));
-        window.location.href = "checkout.html";
-      } else {
-        alert("Tu carrito está vacío. Agrega productos primero.");
-      }
+    // Ir al carrito
+    function verCarrito() {
+      window.location.href = "carrito.html";
     }
 
     // Event listeners
@@ -526,7 +224,66 @@
     document.getElementById("cart-sidebar").addEventListener('mouseleave', function() {
       this.style.display = 'none';
     });
+
+    // Estilo para notificaciones
+    const style = document.createElement('style');
+    style.textContent = `
+      .notification {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #27ae60;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 1001;
+      }
+      .notification.show {
+        opacity: 1;
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 
 </body>
 </html>
+
+<footer style="background: #232629; color: #fff; padding: 40px 0 15px 0; font-size: 15px; margin-top: 0;">
+  <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px;">
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Políticas y Devoluciones</h4>
+      <ul style="list-style: disc; margin-left: 18px;">
+        <li>Todos los productos cuentan con garantía de satisfacción.</li>
+        <li>Las devoluciones pueden solicitarse dentro de los primeros 7 días naturales después de la compra.</li>
+        <li>El producto debe estar en perfectas condiciones y con su empaque original.</li>
+        <li>Para iniciar un proceso de devolución, contáctanos por el formulario o WhatsApp.</li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Métodos de Pago</h4>
+      <ul style="list-style: disc; margin-left: 18px;">
+        <li>Pago en efectivo en campus</li>
+        <li>Transferencia bancaria</li>
+        <li>Pago con tarjeta de crédito y débito</li>
+        <li>Pago en OXXO</li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 220px;">
+      <h4 style="margin-bottom: 10px;">Tarjetas Participantes</h4>
+      <div style="display: flex; gap: 6px; margin-bottom: 10px;">
+        <img src="https://logodownload.org/wp-content/uploads/2016/10/visa-logo-1.png" alt="Visa" style="height: 28px; background: #fff; border-radius: 4px; padding: 2px;">
+        <img src="https://logodownload.org/wp-content/uploads/2014/07/mastercard-logo-1.png" alt="Mastercard" style="height: 28px; background: #fff; border-radius: 4px; padding: 2px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1026px-American_Express_logo_%282018%29.svg.png" alt="American Express" style="height: 28px; background: #fff; border-radius: 4px; padding: 2px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlP251q9GQrAtA9OYZyvxZzeLWg7Zs8PYyzQ&s" alt="OXXO" style="height: 28px; background: #fff; border-radius: 4px; padding: 2px;">
+      </div>
+      <span style="font-size: 13px;">Aceptamos tarjetas de crédito y débito participantes.</span>
+    </div>
+  </div>
+  <div style="text-align: center; color: #ccc; font-size: 13px; margin-top: 28px;">
+    © 2025 Tienda Virtual Instituto Tecnológico de Cancún. Todos los derechos reservados.
+  </div>
+</footer>

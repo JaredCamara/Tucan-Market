@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Papeleria-nuestra tienda</title>
+  <title>Calzado-nuestra tienda</title>
   <link rel="stylesheet" href="style.css">
 
 </head>
@@ -47,7 +47,7 @@
     
 
   <main>
-    <h2>Papeleria</h2>
+    <h2>Calzado</h2>
 
   <!-- BANNER DE FOTOS INTERCAMBIABLES CON FLECHAS -->
   <div class="photo-banner-container" style="max-width: 820px; margin: 0 auto 30px auto; position: relative;">
@@ -58,10 +58,10 @@
   <script>
     // Banner de fotos intercambiables
     const photoBannerImages = [
-      "https://www.opmpapeleria.com/wp-content/uploads/2018/07/10-descuento-opm.png",
-      "https://www.suescun.com.co/wp-content/uploads/2022/06/ofertas-de-papeleria-movil.jpg",
-      "https://i.pinimg.com/736x/af/a2/e4/afa2e4c01dfac40ea9a133255fc26427.jpg",
-      "https://img.freepik.com/vector-gratis/banner-venta-descuento-estudiantes_23-2150562178.jpg?semt=ais_hybrid&w=740",
+      "https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:low/1748044460552-3ebb9880-3831-11f0-89f0-934923ce79ab.jpg",
+      "https://calzzapatodigital.s3.us-west-1.amazonaws.com/landings/calzzapato/d07b9f40-6284-4ed3-afd7-e2685b507a2c.webp",
+      "https://www.laces.mx/cdn/shop/files/MB_MOBILE_10_ADI.jpg?v=1748144913&width=320",
+      "https://cdn2.coppel.com/images/emarketing/1stlevel/2025/mayo/zapatos/bloques/Bloque1-Deskop.jpg",
     ];
     let photoBannerIndex = 0;
     const photoBannerImg = document.getElementById('photo-banner-img');
@@ -81,9 +81,9 @@
     </div>
   </div>
 
-  <!-- CATÁLOGO DE ÚTILES ESCOLARES EN CUADRÍCULA -->
-  <h2 style="margin-top:40px;">Útiles Escolares</h2>
-  <div class="utiles-grid" style="
+  <!-- CATÁLOGO DE TENIS DEPORTIVOS PARA HOMBRE -->
+  <h2 style="margin-top:40px;">Tenis Deportivos para Hombre</h2>
+  <div class="tenis-hombre-grid" style="
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 28px;
@@ -93,143 +93,114 @@
     margin-right: auto;
   ">
     <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://unionpapelera.com.mx/pub/media/catalog/product/cache/74c1057f7991b4edb2bc7bdaa94de933/2/z/2zs.jpg" alt="Paquete de lápices" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Paquete de Lápices #2</h3>
-      <p>Paquete con 12 lápices de madera, HB, con borrador</p>
-      <p class="price">$39</p>
-      <button onclick="agregarAlCarrito('Paquete de Lápices #2', 39)">Agregar al carrito</button>
+      <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09FRBG-2.jpg" alt="Tenis Nike Revolution 6" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Nike Revolution 6</h3>
+      <p>Comodidad y ligereza para correr o entrenar, color negro</p>
+      <p class="price">$1,299</p>
+      <button onclick="agregarAlCarrito('Tenis Nike Revolution 6', 1299)">Agregar al carrito</button>
     </div>
     <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://cdn1.totalcommerce.cloud/normamx/product-image/es/cuaderno-cosido-profesional-cuadro-grande-100-hojas-norma-color-1.webp" alt="Libreta Profesional" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Libreta Profesional Cuadro Grande</h3>
-      <p>100 hojas, pasta dura, tamaño profesional, varios colores</p>
-      <p class="price">$59</p>
-      <button onclick="agregarAlCarrito('Libreta Profesional Cuadro Grande', 59)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://m.media-amazon.com/images/I/61kdlNCeMPL._AC_UF894,1000_QL80_.jpg" alt="Juego de geometría" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Juego de Geometría</h3>
-      <p>Incluye regla, escuadra, transportador y compás</p>
-      <p class="price">$49</p>
-      <button onclick="agregarAlCarrito('Juego de Geometría', 49)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://cdn3.orpamex.com.mx/2518-large_default/colores-de-madera-con-24-colores.jpg" alt="Colores de madera" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Colores de Madera</h3>
-      <p>Paquete con 24 colores, resistentes y brillantes</p>
-      <p class="price">$69</p>
-      <button onclick="agregarAlCarrito('Colores de Madera', 69)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://ss327.liverpool.com.mx/xl/1156141964.jpg" alt="Tijeras escolares" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Tijeras Escolares</h3>
-      <p>Punta redonda, seguras para niños, mango ergonómico</p>
-      <p class="price">$25</p>
-      <button onclick="agregarAlCarrito('Tijeras Escolares', 25)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://officemax.vteximg.com.br/arquivos/ids/1346865-1000-1000/13481_1.jpg?v=638158806568130000" alt="Pegamento en barra" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Pegamento en Barra</h3>
-      <p>21g, no tóxico, ideal para papel y cartulina</p>
-      <p class="price">$19</p>
-      <button onclick="agregarAlCarrito('Pegamento en Barra', 19)">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <!-- CATÁLOGO DE CALCULADORAS EN CUADRÍCULA -->
-  <h2 style="margin-top:40px;">Calculadoras</h2>
-  <div class="calculadoras-grid" style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-    margin-bottom: 40px;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-  ">
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://www.adosa.com.mx/media/catalog/product/cache/4db89bde2062a3745aaded91f69a9032/1/9/195001_1.jpg" alt="Calculadora Científica Casio FX-82MS" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Calculadora Científica Casio FX-82MS</h3>
-      <p>240 funciones, pantalla de 2 líneas, ideal para secundaria y preparatoria</p>
-      <p class="price">$299</p>
-      <button onclick="agregarAlCarrito('Calculadora Científica Casio FX-82MS', 299)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://www.casio.com/content/dam/casio/product-info/locales/mx/es-ar/calc/product/practical/H/HL/HL8/HL-815L-BK/assets/HL-815L-BK_Seq1.jpg" alt="Calculadora Básica Casio HL-815L" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Calculadora Básica Casio HL-815L</h3>
-      <p>8 dígitos, portátil, ideal para operaciones sencillas</p>
-      <p class="price">$99</p>
-      <button onclick="agregarAlCarrito('Calculadora Básica Casio HL-815L', 99)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://m.media-amazon.com/images/I/51GhLGsL86L._AC_UF1000,1000_QL80_.jpg" alt="Calculadora Científica Texas Instruments TI-30XS" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Calculadora Científica TI-30XS</h3>
-      <p>Multi-línea, ideal para álgebra, trigonometría y estadística</p>
-      <p class="price">$399</p>
-      <button class="add-to-cart" onclick="addToCart(303, 'Calculadora Científica TI-30XS', 399)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://m.media-amazon.com/images/I/71ZS-MWetwL._AC_UF894,1000_QL80_.jpg" alt="Calculadora Financiera HP 10bII+" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Calculadora Financiera HP 10bII+</h3>
-      <p>Ideal para negocios, finanzas y contabilidad</p>
-      <p class="price">$599</p>
-      <button onclick="agregarAlCarrito('Calculadora Financiera HP 10bII+', 599)">Agregar al carrito</button>
-    </div>
-  </div>
-
-  <!-- CATÁLOGO DE MOCHILAS EN CUADRÍCULA -->
-  <h2 style="margin-top:40px;">Mochilas</h2>
-
-  <div class="Mochilas-grid" style="
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-    margin-bottom: 40px;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-  ">
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://dpjye2wk9gi5z.cloudfront.net/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/zoom/4012133-0000V1.jpg" alt="Mochila Jansport Superbreak" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Mochila Jansport Superbreak</h3>
-      <p>Color negro, resistente al agua, compartimento para laptop 15"</p>
-      <p class="price">$899</p>
-      <button onclick="agregarAlCarrito('Mochila Jansport Superbreak', 899)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://tottomexico.vtexassets.com/arquivos/ids/239256/1.jpg?v=638796613031600000" alt="Mochila Totto Acuareles" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Mochila Totto Acuareles</h3>
-      <p>Color azul, múltiples compartimentos, ideal para secundaria</p>
+      <img src="https://m.media-amazon.com/images/I/41SldGeQLKL._AC_SY900_.jpg" alt="Tenis Adidas Run Falcon 3.0" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Adidas Run Falcon 3.0</h3>
+      <p>Soporte y amortiguación, ideales para uso diario, color gris</p>
       <p class="price">$1,099</p>
-      <button onclick="agregarAlCarrito('Mochila Totto Acuareles', 1099)">Agregar al carrito</button>
+      <button onclick="agregarAlCarrito('Tenis Adidas Run Falcon 3.0', 1099)">Agregar al carrito</button>
     </div>
     <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09HHS3-1.jpg" alt="Mochila Puma Phase" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Mochila Puma Phase</h3>
-      <p>Color gris, ligera, con bolsillo frontal y tirantes acolchados</p>
-      <p class="price">$749</p>
-      <button onclick="agregarAlCarrito('Mochila Puma Phase', 749)">Agregar al carrito</button>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNcOJvzzX4TelWdQJWRx5M1osOllq2y6jBwg&s" alt="Tenis Puma Flyer Runner" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Puma Flyer Runner</h3>
+      <p>Diseño moderno, suela antideslizante, color azul</p>
+      <p class="price">$999</p>
+      <button onclick="agregarAlCarrito('Tenis Puma Flyer Runner', 999)">Agregar al carrito</button>
     </div>
     <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09H37J-1.jpg" alt="Mochila Adidas Classic" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Mochila Adidas Classic</h3>
-      <p>Color rojo, diseño clásico, capacidad 24L, cierre resistente</p>
-      <p class="price">$899</p>
-      <button onclick="agregarAlCarrito('Mochila Adidas Classic', 899)">Agregar al carrito</button>
-    </div>
-    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://m.media-amazon.com/images/I/61N4aYZCQIL._AC_UF894,1000_QL80_.jpg" alt="Mochila Under Armour Hustle" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Mochila Under Armour Hustle</h3>
-      <p>Color azul marino, repelente al agua, compartimento para zapatos</p>
+      <img src="https://ss872.suburbia.com.mx/xl/5010477701.jpg" alt="Tenis Reebok Lite Plus 3" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Reebok Lite Plus 3</h3>
+      <p>Transpirables, ligeros y resistentes, color blanco</p>
       <p class="price">$1,199</p>
-      <button onclick="agregarAlCarrito('Mochila Under Armour Hustle', 1199)">Agregar al carrito</button>
+      <button onclick="agregarAlCarrito('Tenis Reebok Lite Plus 3', 1199)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- CATÁLOGO DE TENIS DEPORTIVOS PARA MUJER -->
+  <h2 style="margin-top:40px;">Tenis Deportivos para Mujer</h2>
+  <div class="tenis-mujer-grid" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    margin-bottom: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://resources.claroshop.com/medios-plazavip/t1/1724684603dow1jpg" alt="Tenis Nike Downshifter 12 Mujer" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Nike Downshifter 12</h3>
+      <p>Ligereza y soporte para correr, color rosa</p>
+      <p class="price">$1,199</p>
+      <button onclick="agregarAlCarrito('Tenis Nike Downshifter 12 Mujer', 1199)">Agregar al carrito</button>
     </div>
     <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
-      <img src="https://http2.mlstatic.com/D_Q_NP_693432-MLU72127523466_102023-O.webp" alt="Mochila Kanken Classic" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
-      <h3>Mochila Kanken Classic</h3>
-      <p>Color mostaza, diseño sueco, ligera y resistente, 16L</p>
-      <p class="price">$1,499</p>
-      <button onclick="agregarAlCarrito('Mochila Kanken Classic', 1499)">Agregar al carrito</button>
+      <img src="https://surtidoradepartamental.vteximg.com.br/arquivos/ids/630501/180000116630_1.jpg?v=638603436725330000" alt="Tenis Adidas Galaxy 6 Mujer" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Adidas Galaxy 6</h3>
+      <p>Amortiguación y comodidad, color lila</p>
+      <p class="price">$1,099</p>
+      <button onclick="agregarAlCarrito('Tenis Adidas Galaxy 6 Mujer', 1099)">Agregar al carrito</button>
+    </div>
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09HE4J-2.jpg" alt="Tenis Puma Flyer Runner Mujer" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Puma Flyer Runner</h3>
+      <p>Diseño moderno, suela antideslizante, color blanco</p>
+      <p class="price">$999</p>
+      <button onclick="agregarAlCarrito('Tenis Puma Flyer Runner Mujer', 999)">Agregar al carrito</button>
+    </div>
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://s3-us-west-1.amazonaws.com/calzzapato/zoom/09GKQ7-1.jpg" alt="Tenis Reebok Lite Plus 3 Mujer" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Tenis Reebok Lite Plus 3</h3>
+      <p>Transpirables y ligeros, color negro</p>
+      <p class="price">$1,099</p>
+      <button onclick="agregarAlCarrito('Tenis Reebok Lite Plus 3 Mujer', 1099)">Agregar al carrito</button>
+    </div>
+  </div>
+
+  <!-- CATÁLOGO DE SANDALIAS -->
+  <h2 style="margin-top:40px;">Sandalias</h2>
+  <div class="sandalias-grid" style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+    margin-bottom: 40px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  ">
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/77874acd-bf25-4037-bf21-9b442d1b28eb/NIKE+VICTORI+ONE+SLIDE.png" alt="Sandalia Nike Hombre" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Sandalia Nike Hombre</h3>
+      <p>Sandalia ligera y cómoda, color negro</p>
+      <p class="price">$499</p>
+      <button onclick="agregarAlCarrito('Sandalia Nike Hombre', 499)">Agregar al carrito</button>
+    </div>
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/cfc42c07534e43f9aa10d6d9bae5c436_9366/Sandalias_SLYN_Rosa_JI4326_01_standard.jpg" alt="Sandalia Adidas Mujer" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Sandalia Adidas Mujer</h3>
+      <p>Diseño moderno, color rosa</p>
+      <p class="price">$549</p>
+      <button onclick="agregarAlCarrito('Sandalia Adidas Mujer', 549)">Agregar al carrito</button>
+    </div>
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://m.media-amazon.com/images/I/31AQoqEeIIL._AC_SY900_DpWeblab_.jpg" alt="Sandalia Puma Unisex" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Sandalia Puma Unisex</h3>
+      <p>Ideal para playa o alberca, color azul</p>
+      <p class="price">$399</p>
+      <button onclick="agregarAlCarrito('Sandalia Puma Unisex', 399)">Agregar al carrito</button>
+    </div>
+    <div class="producto" style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); padding: 18px; display: flex; flex-direction: column; align-items: center;">
+      <img src="https://http2.mlstatic.com/D_NQ_NP_938284-MLM75419562592_042024-O-sandalias-chanclas-huaraches-reebok-hombre-caballero-playa.webp" alt="Sandalia Reebok Hombre" style="width: 100%; max-width: 150px; height: 170px; object-fit: contain;">
+      <h3>Sandalia Reebok Hombre</h3>
+      <p>Resistentes y ligeras, color gris</p>
+      <p class="price">$429</p>
+      <button onclick="agregarAlCarrito('Sandalia Reebok Hombre', 429)">Agregar al carrito</button>
     </div>
   </div>
 
@@ -279,7 +250,6 @@
     function verCarrito() {
       window.location.href = "carrito.html";
     }
-
 
     // Event listeners
     document.getElementById("cart-link").addEventListener('click', function(e) {

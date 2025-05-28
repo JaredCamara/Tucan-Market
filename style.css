@@ -83,66 +83,18 @@ main {
     border-radius: 8px;
 }
 
-/* Estilos de las secciones de productos */
-section {
-    margin-bottom: 60px; /* Mayor espacio entre secciones */
-}
+    .productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; margin-top: 10px; justify-items: center; }
+    .producto {
+      border: 1px solid #ddd; padding: 20px; width: 300px; border-radius: 5px; background-color: white;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease;
+      text-align: center;
+    }
+    .producto:hover { transform: scale(1.05); }
+    .producto img { width: 100%; height: auto; max-height: 150px; object-fit: contain; margin-bottom: 10px; }
+    button { margin-top: 10px; padding: 8px 12px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer; }
+    button:hover { background-color: #555; }
 
-h3 {
-    font-size: 32px; /* Aumentado el tamaño del título de las categorías */
-    color: #2c3e50;
-    margin-bottom: 20px;
-}
-
-.productos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px; /* Aumentado el espacio entre los productos */
-}
-
-.producto {
-    background-color: #ecf0f1;
-    border-radius: 8px;
-    padding: 30px; /* Aumentado el padding de los productos */
-    text-align: center;
-    width: 28%; /* Ajustado el tamaño del producto para que se vea más grande */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.producto:hover {
-    transform: scale(1.1); /* Aumentado el efecto hover */
-}
-
-.producto img {
-    width: 100%; /* Ahora las imágenes ocupan todo el ancho del producto */
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-}
-
-.producto img:hover {
-    transform: scale(1.05); /* Efecto hover para las imágenes */
-}
-
-.producto p {
-    margin: 20px 0; /* Aumentado el margen entre el texto */
-    font-size: 20px; /* Aumentado el tamaño del texto de los productos */
-}
-
-.producto button {
-    background-color: #27ae60;
-    color: white;
-    padding: 15px 20px; /* Aumentado el tamaño del botón */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 18px; /* Aumentado el tamaño del texto del botón */
-}
-
-.producto button:hover {
-    background-color: #2ecc71;
-}
+    
 
 /* Estilos del carrito */
 #total {
@@ -243,3 +195,9 @@ h2 {
 #carritoCheckout button:hover {
     background-color: #2ecc71;
 }
+
+.carrito { display: flex; align-items: center; gap: 10px; color: white; font-size: 18px; cursor: pointer; }
+    .carrito-icono { font-size: 24px; }
+    .contador {
+      background-color: red; color: white; border-radius: 50%; padding: 5px 10px; font-size: 14px; font-weight: bold;
+    }

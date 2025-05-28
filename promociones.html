@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promociones - Tienda Virtual</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 0; padding: 0; }
+    header { background: #172a7c; color: #fff; padding: 24px 0; text-align: center; }
+    h1 { margin: 0; font-size: 2.2rem; }
+    .promo-aviso {
+      background: #ffe066;
+      color: #222;
+      padding: 16px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      display: none;
+    }
+    .promos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
+    .promo-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(44,62,80,0.10);
+      padding: 22px 18px 18px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.2s;
+      border: 1px solid #e3e3e3;
+    }
+    .promo-card:hover { transform: scale(1.03); }
+    .promo-card img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      background: #f1f5fb;
+    }
+    .promo-nombre { font-weight: bold; color: #172a7c; margin-bottom: 8px; font-size: 1.1rem; }
+    .promo-precio {
+      font-size: 1.1rem;
+      color: #222;
+      margin-bottom: 6px;
+    }
+    .promo-descuento {
+      color: #e1306c;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .promo-card button {
+      background: #172a7c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 0;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s;
+    }
+    .promo-card button:hover { background: #0e1a4d; }
+    @media (max-width: 600px) {
+      .promos-grid { gap: 16px; }
+      .promo-card { padding: 14px 8px 12px 8px; }
+      .promo-card img { width: 90px; height: 90px; }
+    }
+    .volver {
+      display: block;
+      margin: 30px auto 0 auto;
+      background: #333;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 28px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      width: fit-content;
+      transition: background 0.2s;
+    }
+    .volver:hover { background: #555; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Promociones Especiales</h1>
+    <p style="margin-top: 8px; font-size: 1.1rem;">¡Aprovecha los descuentos de la semana!</p>
+  </header>
+  <div class="promo-aviso" id="promoPapeleria">
+    ¡Viernes de Papelería! 20% de descuento en todos los productos de papelería solo hoy.
+  </div>
+  <div class="promos-grid">
+    <!-- Ropa -->
+    <div class="promo-card">
+      <img src="https://i.pinimg.com/736x/78/1d/68/781d68f5b9eb7b086233d6858e1b0d7d.jpg" alt="Playera Tecnm Clásica">
+      <div class="promo-nombre">Playera Tecnm Clásica</div>
+      <div class="promo-precio"><s>$349.99</s> <span style="color:#25d366;">$199.99</span></div>
+      <div class="promo-descuento">¡Ahorra $150!</div>
+      <button onclick="agregarAlCarrito('Playera Tecnm Clásica', 199.99)">Agregar al carrito</button>
+    </div>
+    <div class="promo-card">
+      <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/177972/image-470edb8a78744802b0cc71c61ca7333f.jpg?v=638158795802000000" alt="Playera Tecnm Azul Dama">
+      <div class="promo-nombre">Playera Tecnm Azul Dama</div>
+      <div class="promo-precio"><s>$349.99</s> <span style="color:#25d366;">$249.99</span></div>
+      <div class="promo-descuento">¡Ahorra $100!</div>
+      <button onclick="agregarAlCarrito('Playera Tecnm Azul Dama', 249.99)">Agregar al carrito</button>
+    </div>
+    <div class="promo-card">
+      <img src="https://i.pinimg.com/736x/78/1d/68/781d68f5b9eb7b086233d6858e1b0d7d.jpg" alt="Sudadera Tecnm Unisex">
+      <div class="promo-nombre">Sudadera Tecnm Unisex</div>
+      <div class="promo-precio"><s>$499.99</s> <span style="color:#25d366;">$399.99</span></div>
+      <div class="promo-descuento">¡Ahorra $100!</div>
+      <button onclick="agregarAlCarrito('Sudadera Tecnm Unisex', 399.99)">Agregar al carrito</button>
+    </div>
+    <!-- Tecnología -->
+    <div class="promo-card">
+      <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/187109/image-03a39f16ce104a679c86df3acfb7dba1.jpg?v=638494925619030000" alt="Termo Metálico Tec de un litro">
+      <div class="promo-nombre">Termo Metálico Tec de un litro</div>
+      <div class="promo-precio"><s>$399.99</s> <span style="color:#25d366;">$299.99</span></div>
+      <div class="promo-descuento">¡Ahorra $100!</div>
+      <button onclick="agregarAlCarrito('Termo Metálico Tec de un litro', 299.99)">Agregar al carrito</button>
+    </div>
+    <div class="promo-card">
+      <img src="Assets/audi.png" alt="Audífonos inalámbricos Sky">
+      <div class="promo-nombre">Audífonos inalámbricos Sky</div>
+      <div class="promo-precio"><s>$499.99</s> <span style="color:#25d366;">$399.99</span></div>
+      <div class="promo-descuento">¡Ahorra $100!</div>
+      <button onclick="agregarAlCarrito('Audífonos inalámbricos Sky', 399.99)">Agregar al carrito</button>
+    </div>
+    <div class="promo-card">
+      <img src="Assets/reloj.jpg" alt="Reloj Smart Watch Oiris">
+      <div class="promo-nombre">Reloj Smart Watch Oiris</div>
+      <div class="promo-precio"><s>$899.99</s> <span style="color:#25d366;">$749.99</span></div>
+      <div class="promo-descuento">¡Ahorra $150!</div>
+      <button onclick="agregarAlCarrito('Reloj Smart Watch Oiris', 749.99)">Agregar al carrito</button>
+    </div>
+    <!-- Papelería -->
+    <div class="promo-card papeleria">
+      <img src="https://papeleriacrisol.com.mx/941-home_default/lapicero-tecnico-mars-steadtler-mina-de-2mm.jpg" alt="Lapicero punta fina Azul">
+      <div class="promo-nombre">Lapicero punta fina Azul</div>
+      <div class="promo-precio"><s>$12.99</s> <span class="precio-papeleria" style="color:#25d366;">$10.39</span></div>
+      <div class="promo-descuento">¡20% de descuento solo viernes!</div>
+      <button onclick="agregarAlCarrito('Lapicero punta fina Azul', 10.39)">Agregar al carrito</button>
+    </div>
+    <div class="promo-card papeleria">
+      <img src="Assets/pegamentot.jpg" alt="Pegamento Pritt Chico">
+      <div class="promo-nombre">Pegamento Pritt Chico</div>
+      <div class="promo-precio"><s>$25.99</s> <span class="precio-papeleria" style="color:#25d366;">$20.79</span></div>
+      <div class="promo-descuento">¡20% de descuento solo viernes!</div>
+      <button onclick="agregarAlCarrito('Pegamento Pritt Chico', 20.79)">Agregar al carrito</button>
+    </div>
+    <div class="promo-card papeleria">
+      <img src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png" alt="Cuaderno Profesional">
+      <div class="promo-nombre">Cuaderno Profesional</div>
+      <div class="promo-precio"><s>$49.99</s> <span class="precio-papeleria" style="color:#25d366;">$39.99</span></div>
+      <div class="promo-descuento">¡20% de descuento solo viernes!</div>
+      <button onclick="agregarAlCarrito('Cuaderno Profesional', 39.99)">Agregar al carrito</button>
+    </div>
+  </div>
+  <a href="index.html" class="volver">Volver a la tienda</a>
+  <script>
+    // Mostrar aviso y precios de papelería solo los viernes
+    function activarPromoPapeleria() {
+      const hoy = new Date();
+      const esViernes = hoy.getDay() === 5; // 5 = Viernes
+      document.getElementById('promoPapeleria').style.display = esViernes ? 'block' : 'none';
+      // Si no es viernes, oculta el descuento y muestra precio normal
+      document.querySelectorAll('.papeleria').forEach(card => {
+        const precio = card.querySelector('.precio-papeleria');
+        if (!esViernes) {
+          precio.textContent = precio.previousElementSibling.textContent.replace(/[\s\S]*\$(\d+\.\d+)/, '$1');
+          card.querySelector('.promo-descuento').style.display = 'none';
+        } else {
+          card.querySelector('.promo-descuento').style.display = 'block';
+        }
+      });
+    }
+    activarPromoPapeleria();
+
+    // Función para agregar al carrito (igual que en index.html)
+    function agregarAlCarrito(nombre, precio) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      // Busca la imagen del producto
+      const boton = event.target;
+      const productoDiv = boton.closest('.promo-card');
+      const img = productoDiv ? productoDiv.querySelector('img') : null;
+      const imagen = img ? img.src : '';
+      carrito.push({ nombre, precio, imagen });
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert(`Agregado: ${nombre} - $${precio}`);
+    }
+  </script>
+</body>
+</html>
