@@ -1,23 +1,15 @@
 <?php
-include 'admin-panel/db.php';
-
-$productos = [];
-$sql = "SELECT * FROM tecnologia";
-$result = $conn->query($sql);
-
-if ($result && $result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $productos[] = $row;
-    }
-}
-?>
-
-<?php
 session_start();
 include 'admin-panel/db.php';
 
-$productos = $conn->query("SELECT * FROM tecnologia");
+$productos = [];
 
+try {
+    $stmt = $pdo->query("SELECT * FROM tecnologia");
+    $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Error al obtener los productos: " . $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -144,7 +136,7 @@ $productos = $conn->query("SELECT * FROM tecnologia");
   </script>
 
   <div class="grid-container">
-    <?php while ($p = $productos->fetch_assoc()): ?>
+    <?php foreach ($productos as $p): ?>
         <div class="producto">
             <img src="<?= $p['imagen_url'] ?>" alt="<?= $p['nombre'] ?>">
             <h3><?= $p['nombre'] ?></h3>
@@ -157,7 +149,7 @@ $productos = $conn->query("SELECT * FROM tecnologia");
                 <button>Agregar al carrito</button>
             </form>
         </div>
-    <?php endwhile; ?>
+    <?php endforeach; ?>
 </div>
 
   <script>
