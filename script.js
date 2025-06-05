@@ -3,9 +3,11 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 // Función para agregar productos al carrito
 function agregarAlCarrito(nombre, precio, imagen) {
-    carrito.push({ nombre, precio, imagen });
-    localStorage.setItem("carrito", JSON.stringify(carrito)); // Guardar en localStorage
-    alert(`${nombre} agregado al carrito`);
+  let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  carrito.push({ nombre, precio, imagen });
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+  actualizarContadorCarrito();
+  alert(`Agregado: ${nombre} - $${precio}`);
 }
 
 // Mostrar productos en la página del carrito (carrito.html)

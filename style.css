@@ -6,10 +6,18 @@
 }
 
 /* Estilos para el body */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Estilos del header */
@@ -76,11 +84,12 @@ nav ul li ul.submenu li a:hover {
 
 /* Estilos del main */
 main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 20px auto;
-    background-color: white;
-    border-radius: 8px;
+  flex: 1 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  background-color: white;
+  border-radius: 8px;
 }
 
     .productos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 10px; margin-top: 10px; justify-items: center; }
@@ -201,3 +210,25 @@ h2 {
     .contador {
       background-color: red; color: white; border-radius: 50%; padding: 5px 10px; font-size: 14px; font-weight: bold;
     }
+
+/* Footer siempre abajo */
+.footer-estatico {
+  margin-top: auto;
+  background: #232629;
+  color: #fff;
+  padding: 40px 0 15px 0;
+  font-size: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.footer-estatico > div {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-estatico ul {
+  padding-left: 18px;
+}
