@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tienda Virtual</title>
+  <title>Tucan Market  </title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; padding-top: 80px; background-color: #f9f9f9; }
@@ -284,31 +284,26 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt6JApPWhRl-U53kLBH91CY8JMKVR-Gr1iq00u0ILOQnJ-8CnCuaR3XAOCCy7Hh5RYJwQ&usqp=CAU" alt="Taza Tucan Classica">
         <p>Taza Tucan Classica</p>
         <p>$149.99</p>
-        <button onclick="agregarAlCarrito('Taza Tucan Classica', 149.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/184676/image-3b73003b4ba2420290491496f0a615d1.jpg?v=638387724001200000" alt="Gorra Tec Azul Unisex">
         <p>Gorra Tec Azul Unisex</p>
         <p>$449.99</p>
-        <button onclick="agregarAlCarrito('Gorra Tec Azul Unisex', 449.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/187109/image-03a39f16ce104a679c86df3acfb7dba1.jpg?v=638494925619030000" alt="Termo metalico Tec de un litro">
         <p>Termo metalico Tec de un litro</p>
         <p>$349.99</p>
-        <button onclick="agregarAlCarrito('Termo metalico Tec de un litro', 349.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://papeleriacrisol.com.mx/941-home_default/lapicero-tecnico-mars-steadtler-mina-de-2mm.jpg" alt="Lapicero punta fina Azul">
         <p>Lapicero punta fina Azul</p>
         <p>$12.99</p>
-        <button onclick="agregarAlCarrito('Lapicero punta fina Azul', 12.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/177972/image-470edb8a78744802b0cc71c61ca7333f.jpg?v=638158795802000000" alt="Playera tecnm azul dama">
         <p>Playera tecnm azul dama</p>
         <p>$349.99</p>
-        <button onclick="agregarAlCarrito('Playera tecnm azul dama', 349.99)">Agregar al carrito</button>
       </div>
     </div>
   </section>
@@ -321,31 +316,26 @@
         <img src="https://tecmonterreymx.vtexassets.com/arquivos/ids/169449/Playera-casual-TEC-CM-azul_1.jpg?v=637777344059800000" alt="Playera Tecnm Clásica">
         <p>Playera Tecnm Clásica</p>
         <p>$349.99</p>
-        <button onclick="agregarAlCarrito('Playera Tecnm Clásica', 349.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://m.media-amazon.com/images/I/514sIIlrxEL._AC_UY1000_.jpg" alt="Gorra Yankees Blanca">
         <p>Gorra Yankees Blanca</p>
         <p>$399.99</p>
-        <button onclick="agregarAlCarrito('Gorra Yankees Blanca', 399.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://http2.mlstatic.com/D_NQ_NP_686713-MLM69805822156_062023-O-audifonos-inalambricos-bluetooth-touch-free-sky.webp" alt="Audífonos inalámbricos Sky">
         <p>Audífonos inalámbricos Sky</p>
         <p>$499.99</p>
-        <button onclick="agregarAlCarrito('Audífonos inalámbricos Sky', 499.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://m.media-amazon.com/images/I/71HtIFEr0GL.jpg" alt="Reloj Smart Watch Oiris">
         <p>Reloj Smart Watch Oiris</p>
         <p>$899.99</p>
-        <button onclick="agregarAlCarrito('Reloj Smart Watch Oiris', 899.99)">Agregar al carrito</button>
       </div>
       <div class="producto">
         <img src="https://www.officedepot.com.mx/medias/7339-2.jpg-1200ftw?context=bWFzdGVyfHJvb3R8MTM4MTY0fGltYWdlL2pwZWd8YURFMUwyaGpNQzh4TURBek9UazFNemMxTWpBNU5DNXFjR2N8NTYzZGVhMTE2MDYzOWRkMTc5YzI4ZTY1NTMwYWIzNTg3NDgwYjdhNWYxMGEzNzNiZmZiMTFiMmUwZjBjOTgwZQ" alt="Pegamento Pritt Chico">
         <p>Pegamento Pritt Chico</p>
         <p>$25.99</p>
-        <button onclick="agregarAlCarrito('Pegamento Pritt Chico', 25.99)">Agregar al carrito</button>
       </div>
     </div>
 
@@ -506,7 +496,7 @@
     </div>
   </div>
   <div style="text-align: center; color: #ccc; font-size: 13px; margin-top: 28px;">
-    © 2025 Tienda Virtual Instituto Tecnológico de Cancún. Todos los derechos reservados.
+    © 2025 Tucan Market Instituto Tecnológico de Cancún. Todos los derechos reservados.
   </div>
 </footer>
 
