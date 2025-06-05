@@ -204,7 +204,7 @@
     </div>
     <nav style="flex:1;">
       <ul style="display: flex; gap: 38px; list-style: none; margin: 0; padding: 0; justify-content: center;">
-        <li><a href="admin-panel\admin.php" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 16px;">Panel Admin</a></li>
+        <li><a href="admin-panel/loginad.php" style="color: #fff; text-decoration: none; font-weight: bold; font-size: 16px;">Panel Admin</a></li>
         <li><a href="quienes-somos.php" style="color: #fff; text-decoration: none; font-size: 16px;">Quiénes Somos</a></li>
         <li><a href="#contacto" style="color: #fff; text-decoration: none; font-size: 16px;">Contacto</a></li>
         <li><a href="FAQ.php" style="color: #fff; text-decoration: none; font-size: 16px;">FAQ</a></li>
@@ -263,13 +263,6 @@
           </div>
           <div class="categoria-nombre">Papelería</div>
           <button class="categoria-boton" onclick="window.location.href='papeleria.php'">Ver productos</button>
-        </div>
-        <div class="categoria-tarjeta">
-          <div class="categoria-icono">
-            <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="Servicios">
-          </div>
-          <div class="categoria-nombre">Servicios</div>
-          <button class="categoria-boton" onclick="window.location.href='servicios.php'">Ver servicios</button>
         </div>
       </div>
     </section>  

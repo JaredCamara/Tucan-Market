@@ -1,18 +1,37 @@
-<?php include '../db.php'; include '../cloudinary.php';
+<?php
+include '../auth.php';
+include '../cloudinary.php';
+include '../db.php';
 
+$id = $_GET['id'] ?? null;
 
-$id = $_GET['id'];
-$res = $conn->query("SELECT * FROM ropa WHERE id=$id");
-$ropa = $res->fetch_assoc();
+if (!$id || !is_numeric($id)) {
+    die("ID inválido");
+}
 
-if ($_POST) {
+$stmt = $pdo->prepare("SELECT * FROM ropa WHERE id = :id");
+$stmt->execute(['id' => $id]);
+$ropa = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!$ropa) {
+    die("Producto no encontrado.");
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $imagen = $ropa['imagen_url'];
     if (!empty($_FILES['imagen']['tmp_name'])) {
         $imagen = subirACloudinary($_FILES['imagen']['tmp_name']);
     }
-    $stmt = $conn->prepare("UPDATE ropa SET nombre=?, descripcion=?, precio=?, imagen_url=? WHERE id=?");
-    $stmt->bind_param("ssdsi", $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $imagen, $id);
-    $stmt->execute();
+
+    $stmt = $pdo->prepare("UPDATE ropa SET nombre = :nombre, descripcion = :descripcion, precio = :precio, imagen_url = :imagen WHERE id = :id");
+    $stmt->execute([
+        'nombre' => $_POST['nombre'],
+        'descripcion' => $_POST['descripcion'],
+        'precio' => $_POST['precio'],
+        'imagen' => $imagen,
+        'id' => $id
+    ]);
+
     header("Location: listar.php");
     exit;
 }

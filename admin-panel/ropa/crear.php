@@ -1,10 +1,14 @@
-<?php include '../db.php'; include '../cloudinary.php';
+<?php include '../auth.php'; include '../cloudinary.php'; include '../db.php';
 
 if ($_POST) {
     $imagen = subirACloudinary($_FILES['imagen']['tmp_name']);
-    $stmt = $conn->prepare("INSERT INTO ropa (nombre, descripcion, precio, imagen_url) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssds", $_POST['nombre'], $_POST['descripcion'], $_POST['precio'], $imagen);
-    $stmt->execute();
+    $stmt = $pdo->prepare("INSERT INTO ropa (nombre, descripcion, precio, imagen_url) VALUES (:nombre, :descripcion, :precio, :imagen)");
+$stmt->execute([
+    'nombre' => $_POST['nombre'],
+    'descripcion' => $_POST['descripcion'],
+    'precio' => $_POST['precio'],
+    'imagen' => $imagen
+]);
     header("Location: listar.php");
     exit;
 }
