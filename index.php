@@ -1,3 +1,25 @@
+
+<?php
+include 'admin-panel/db.php';
+
+$productos = [];
+$sql = "SELECT * FROM ropa";
+$result = $conn->query($sql);
+
+?>
+
+<?php
+session_start();
+include 'admin-panel/db.php';
+
+$productos = $conn->query("SELECT * FROM ropa");
+
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,6 +27,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tucan Market  </title>
   <style>
+
+    :root {
+        --color-primario: #172a7c;
+        --color-secundario: #25d366;
+        --color-fondo: #f9f9f9;
+        --color-texto: #333;
+        --color-texto-oscuro: #f1f1f1;
+        --color-boton: #444;
+        --color-boton-hover: #666;
+    }
+
+    /*------------------------grid----------------------------------*/
+.grid-container {
+    display: flex;
+    flex-direction: row; /* Organiza los productos en vertical */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+}
+
+.producto {
+    width: 300px; /* Ajusta el ancho */
+    text-align: center; /* Centra el contenido */
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    margin: 10px;
+}
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; padding-top: 80px; background-color: #f9f9f9; }
     body.modo-oscuro { background-color: #181818 !important; color: #f1f1f1 !important; }
@@ -264,17 +314,37 @@
           <div class="categoria-nombre">Papelería</div>
           <button class="categoria-boton" onclick="window.location.href='papeleria.php'">Ver productos</button>
         </div>
-        <div class="categoria-tarjeta">
+        <!--<div class="categoria-tarjeta">
           <div class="categoria-icono">
             <img src="https://cdn-icons-png.flaticon.com/512/1946/1946429.png" alt="Servicios">
           </div>
           <div class="categoria-nombre">Servicios</div>
           <button class="categoria-boton" onclick="window.location.href='servicios.php'">Ver servicios</button>
-        </div>
+        </div>-->
       </div>
     </section>  
 
-  <!-- PRODUCTOS DESTACADOS -->
+
+    
+<div class="grid-container">
+    <?php while ($p = $productos->fetch_assoc()): ?>
+        <div class="producto">
+            <img src="<?= $p['imagen_url'] ?>" alt="<?= $p['nombre'] ?>">
+            <h3><?= $p['nombre'] ?></h3>
+            <p><?= $p['descripcion'] ?></p>
+            <p><strong>$<?= $p['precio'] ?></strong></p>
+            <form method="POST" action="agregar_carrito.php">
+                <input type="hidden" name="id" value="<?= $p['id'] ?>">
+                <input type="hidden" name="nombre" value="<?= $p['nombre'] ?>">
+                <input type="hidden" name="precio" value="<?= $p['precio'] ?>">
+                <button>Agregar al carrito</button>
+            </form>
+        </div>
+    <?php endwhile; ?>
+</div>
+
+
+  <!-- PRODUCTOS DESTACADOS --
   <h2 style="text-align: center; margin: 40px 0 40px 0; font-size: 2rem; font-weight: bold; color: #222;">
       Sé más tucán que nunca
   </h2>
@@ -307,8 +377,8 @@
       </div>
     </div>
   </section>
-
-  <!-- CATÁLOGO DE PRODUCTOS -->
+  
+  <-- CATÁLOGO DE PRODUCTOS --
   <main>
     <h2>Los más vendidos</h2>
     <div class="productos">
@@ -337,7 +407,7 @@
         <p>Pegamento Pritt Chico</p>
         <p>$25.99</p>
       </div>
-    </div>
+    </div>-->
 
     <h2 style="text-align: center; margin: 40px 0 40px 0; font-size: 2rem; font-weight: bold; color: #222;">
       

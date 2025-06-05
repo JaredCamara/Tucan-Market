@@ -100,8 +100,11 @@ $productos = $conn->query("SELECT * FROM ropa");
       </nav>
     </div>
     <div style="display: flex; align-items: center; gap: 12px;">
-      <input type="text" placeholder="Buscar productos..." style="padding: 5px 10px; border-radius: 3px; border: none;">
-      <button style="background: #666; color: #fff; border: none; padding: 5px 12px; border-radius: 3px; cursor: pointer;">Buscar</button>
+    <div class="barra-busqueda" style="display: flex; align-items: center; gap: 18px; margin-right: 32px;">
+
+   
+      <!--<input type="text" placeholder="Buscar productos..." style="padding: 5px 10px; border-radius: 3px; border: none;">
+      <button style="background: #666; color: #fff; border: none; padding: 5px 12px; border-radius: 3px; cursor: pointer;">Buscar</button>-->
       <div class="carrito" onclick="verCarrito()">
       <span class="carrito-icono">🛒</span>
       <span class="contador" id="contador-carrito">0</span>
