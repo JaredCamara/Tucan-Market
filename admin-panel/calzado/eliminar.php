@@ -1,5 +1,15 @@
-<?php include '../db.php';
-$id = $_GET['id'];
-$conn->query("DELETE FROM calzado WHERE id=$id");
+<?php
+include '../auth.php'; include '../db.php';
+
+$id = $_GET['id'] ?? null;
+
+if (!$id || !is_numeric($id)) {
+    die("ID inválido");
+}
+
+$stmt = $pdo->prepare("DELETE FROM calzado WHERE id = :id");
+$stmt->execute(['id' => $id]);
+
 header("Location: listar.php");
+exit;
 ?>

@@ -224,7 +224,7 @@ body {
     </div>
     <nav style="flex:1;">
       <ul>
-        <li><a href="admin-panel\admin.php">Panel Admin</a></li>
+        <li><a href="index.php">inicio</a></li>
         <li><a href="quienes-somos.php">Quiénes Somos</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="FAQ.php">FAQ</a></li>

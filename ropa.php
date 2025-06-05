@@ -3,12 +3,14 @@ include 'admin-panel/db.php';
 
 $productos = [];
 $sql = "SELECT * FROM ropa";
-$result = $conn->query($sql);
 
-if ($result && $result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        $productos[] = $row;
+try {
+    $stmt = $pdo->query($sql);
+    if ($stmt) {
+        $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+} catch (PDOException $e) {
+    echo "Error: " . $e->getMessage();
 }
 ?>
 
@@ -16,8 +18,13 @@ if ($result && $result->num_rows > 0) {
 session_start();
 include 'admin-panel/db.php';
 
-$productos = $conn->query("SELECT * FROM ropa");
-
+try {
+    $stmt = $pdo->query("SELECT * FROM ropa");
+    $productos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    echo "Error al obtener los productos: " . $e->getMessage();
+    $productos = [];
+}
 ?>
 
 <!DOCTYPE html>
@@ -149,7 +156,7 @@ $productos = $conn->query("SELECT * FROM ropa");
   </div>
 
 <div class="grid-container">
-    <?php while ($p = $productos->fetch_assoc()): ?>
+    <?php foreach ($productos as $p): ?>
         <div class="producto">
             <img src="<?= $p['imagen_url'] ?>" alt="<?= $p['nombre'] ?>">
             <h3><?= $p['nombre'] ?></h3>
@@ -162,7 +169,7 @@ $productos = $conn->query("SELECT * FROM ropa");
                 <button>Agregar al carrito</button>
             </form>
         </div>
-    <?php endwhile; ?>
+    <?php endforeach; ?>
 </div>
 
   <script>

@@ -1,4 +1,4 @@
-<?php include '../db.php'; ?>
+<?php include '../auth.php'; include '../db.php';?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -164,9 +164,11 @@
         
         <div class="products-grid">
             <?php
-            $res = $conn->query("SELECT * FROM calzado");
-            if ($res->num_rows > 0) {
-                while($row = $res->fetch_assoc()) {
+            $stmt = $pdo->query("SELECT * FROM calzado");
+$ropa = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if (count($ropa) > 0) {
+    foreach ($ropa as $row) {
             ?>
                 <div class="product-card">
                     <img src="<?php echo htmlspecialchars($row['imagen_url']); ?>" alt="<?php echo htmlspecialchars($row['nombre']); ?>" class="product-image">
